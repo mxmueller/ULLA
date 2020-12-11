@@ -6,27 +6,33 @@ Urlaubsverwaltungs- &amp; Antragsstellungsapplikation (kurz. ULLA)
 
 
 
-#Setup
+# Setup
 Repositorie (bash):
 ```
 git curl https://github.com/mxmueller/ULLA.git
 cd app
 ```
+
 <br>
 Install Composer:
+
 ```
 composer install
 ```
+
 <br>
 Install Laratrust:
+
 ```
 composer require santigarcor/laratrust
 php artisan vendor:publish --tag="laratrust"
 composer dump-autoload
 php artisan migrate
 ```
+
 <br>
 Install Laravel UI:
+
 ```
 composer require laravel/ui
 ```
