@@ -38,10 +38,12 @@ composer require laravel/ui
 ```
 <br>
 Build frontend:
+
 ```
 npm install
 npm run dev
 ```
+
 <br>
 
 Seeds:
