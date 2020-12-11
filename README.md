@@ -29,7 +29,6 @@ Install Laravel UI (Login / Registration frontend):
 **Always choose (yes/no) --> no (!)**
 ```
 composer require laravel/ui
-php artisan ui vue --auth
 ```
 
 Create Default Admin User <br>
