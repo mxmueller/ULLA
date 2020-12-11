@@ -12,7 +12,7 @@ cd ULLA/app
 composer install
 ```
 
-Laratrust Setup (User Roles):
+Install Laratrust (User Roles):
 ```
 composer require santigarcor/laratrust
 php artisan vendor:publish --tag="laratrust"
@@ -23,4 +23,16 @@ php artisan migrate
 Setup default User Roles with the ULLA default Seeder:
 ```
 php artisan db:seed --class=ullaDefaultRoleSeeder
+```
+
+Install Laravel UI (Login / Registration frontend):
+```
+composer require laravel/ui
+php artisan ui vue --auth
+```
+
+Install NPM:
+```
+npm install
+npm run dev / npm run production
 ```
