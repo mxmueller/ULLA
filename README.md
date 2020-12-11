@@ -48,6 +48,7 @@ Seeds:
 php artisan db:seed --class=ullaDefaultRoleSeeder
 php artisan db:seed --class=ullaDefaultAdminSeed
 ```
+<br>
 Now we created all 4 setup roles and the default Admin User! <br>
 Default Admin credentials: <br>
 Email: admin@admin.com <br>
