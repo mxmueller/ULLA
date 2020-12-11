@@ -16,7 +16,6 @@ Laratrust Setup (User Roles):
 ```
 composer require santigarcor/laratrust
 php artisan vendor:publish --tag="laratrust"
-php artisan laratrust:setup
 composer dump-autoload
 php artisan migrate
 ```
