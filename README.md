@@ -32,15 +32,15 @@ composer require laravel/ui
 php artisan ui vue --auth
 ```
 
-Create Default Admin User
-Username: admin
-Password:: password
+Create Default Admin User <br>
+Username: admin <br>
+Password:: password <br>
 Email: admin@admin.com
 ```
 php artisan db:seed --class=ullaDefaultAdminSeed
 ```
-Login with this User and create your own Admin user and add Role 'admin',
-after that you can delete the default seed.
+Login with this User and create your own Admin user and add Role 'admin', <br>
+after that you can delete the default seed. 
 
 
 Install NPM:
