@@ -26,7 +26,7 @@ php artisan db:seed --class=ullaDefaultRoleSeeder
 ```
 
 Install Laravel UI (Login / Registration frontend):
-#### Always choose (yes/no) --> no (!)
+**Always choose (yes/no) --> no (!)**
 ```
 composer require laravel/ui
 php artisan ui vue --auth
