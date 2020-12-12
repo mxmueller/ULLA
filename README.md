@@ -1,18 +1,28 @@
-# ULLA
+<img  width="300" src="https://github.com/mxmueller/ulla-foundation/blob/main/app/public/brand/logo_large.png">
 Urlaubsverwaltungs- &amp; Antragsstellungsapplikation (kurz. ULLA)
 
-Projekt hochziehen:
 
-Initial Installation:
+- [Setup](#Setup)
+
+
+
+# Setup
+Repositorie (bash):
 ```
-$ git clone https://github.com/mxmueller/ULLA.git 
+git curl https://github.com/mxmueller/ULLA.git
+cd app
 ```
+
+<br>
+Install Composer:
+
 ```
-cd ULLA/app
 composer install
 ```
 
-Install Laratrust (User Roles):
+<br>
+Install Laratrust:
+
 ```
 composer require santigarcor/laratrust
 php artisan vendor:publish --tag="laratrust"
@@ -20,30 +30,33 @@ composer dump-autoload
 php artisan migrate
 ```
 
-Setup default User Roles with the ULLA default Seeder:
-```
-php artisan db:seed --class=ullaDefaultRoleSeeder
-```
+<br>
+Install Laravel UI:
 
-Install Laravel UI (Login / Registration frontend):
-**Always choose (yes/no) --> no (!)**
 ```
 composer require laravel/ui
 ```
+<br>
+Build frontend:
 
-Create Default Admin User <br>
-Username: admin <br>
-Password:: password <br>
-Email: admin@admin.com
-```
-php artisan db:seed --class=ullaDefaultAdminSeed
-```
-Login with this User and create your own Admin user and add Role 'admin', <br>
-after that you can delete the default seed. 
-
-
-Install NPM:
 ```
 npm install
-npm run dev / npm run production
+npm run dev
 ```
+
+<br>
+
+Seeds:
+
+```
+php artisan db:seed --class=ullaDefaultRoleSeeder
+php artisan db:seed --class=ullaDefaultAdminSeed
+```
+
+<br>
+Now we created all 4 setup roles and the default Admin User! <br>
+Default Admin credentials:<br>
+Email: admin@admin.com <br>
+Password: password <br>
+<br>
+<br>
