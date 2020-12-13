@@ -6,7 +6,7 @@
         <div class="w-100 p-3">
 
 
-            <div class="card shadow">
+            <div class="card shadow rounded">
                 <div class="card-header">{{ __('Benutzer Manager') }}</div>
 
                 <div class="card-body">
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="card shadow mt-5">
+            <div class="card shadow mt-5 rounded">
                 <div class="card-header">{{ __('Verfügbare Rollen') }}</div>
 
                 <div class="card-body">
@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            <div class="card shadow mt-5">
+            <div class="card shadow mt-5 rounded">
                 <div class="card-header">{{ __('Laratrust') }}</div>
 
                 <div class="card-body">

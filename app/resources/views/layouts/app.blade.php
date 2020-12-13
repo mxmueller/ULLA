@@ -32,7 +32,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/dashboard') }}">
                     <img src="{{ asset('brand/logo_large.png') }}" width="130" alt="brand">
@@ -54,7 +54,7 @@
                         @endrole
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/permission">Antrag</a>
+                            <a class="nav-link" href="/request_interface">Antrag</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/permission">Verzeichnis</a>
