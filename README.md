@@ -1,4 +1,4 @@
-<img  width="300" src="https://github.com/mxmueller/ulla-foundation/blob/main/app/public/brand/logo_large.png">
+<img  width="300" src="https://github.com/mxmueller/ULLA/blob/main/app/public/brand/logo_round_black.png">
 Urlaubsverwaltungs- &amp; Antragsstellungsapplikation (kurz. ULLA)
 
 
