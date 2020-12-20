@@ -13,8 +13,10 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -28,7 +30,7 @@
             <div class="bg-danger border-right" id="sidebar-wrapper">
                 <div class="sidebar-heading">
                     <a href="{{ url('/dashboard') }}">
-                    <img src="{{ asset('brand/logo_large.png') }}" width="130" alt="brand">
+                        <img src="{{ asset('brand/logo_large.png') }}" width="130" alt="brand">
                     </a>
                 </div>
                 <div class="list-group list-group-flush">
@@ -53,7 +55,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <h3 class="mt-1" ><a class="text-dark" href="/dashboard">Dashboard</a> > Seitenname</h3>
+                    <h3 class="mt-1"><a class="text-dark" href="/dashboard">Dashboard</a> > Seitenname</h3>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

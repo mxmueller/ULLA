@@ -43,7 +43,7 @@ Route::post('/delete_user', [App\Http\Controllers\UserActions\deleteUser::class,
 // ----------------------------------------------------------------
 // Application Views
 Route::get('/permission-board', [App\Http\Controllers\Tasks\PermissionController::class, 'index'])->name('permission-board');
-Route::get('/request_interface', [App\Http\Controllers\Request\RequestInterface::class, 'index'])->name('request_interface');
+Route::get('/request-interface', [App\Http\Controllers\Request\RequestInterface::class, 'index'])->name('request-interface');
 
 Auth::routes();
 
