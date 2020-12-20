@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('login');
+// });
+
+Route::redirect('/', '/login');
+Route::redirect('/home', '/login');
+
+Route::get('/app', function () {
+    return view('layouts.app');
 });
+
 
 // ----------------------------------------------------------------
 // User Roles
@@ -34,14 +42,10 @@ Route::post('/delete_user', [App\Http\Controllers\UserActions\deleteUser::class,
 
 // ----------------------------------------------------------------
 // Application Views
-Route::get('/permission', [App\Http\Controllers\Tasks\PermissionController::class, 'index'])->name('permission');
+Route::get('/permission-board', [App\Http\Controllers\Tasks\PermissionController::class, 'index'])->name('permission-board');
 Route::get('/request_interface', [App\Http\Controllers\Request\RequestInterface::class, 'index'])->name('request_interface');
 
 Auth::routes();
 
 
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

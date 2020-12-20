@@ -23,6 +23,6 @@ class updateUserRole extends Controller
         $requested_user->detachRole($requested_current_role[0]->name);
         $requested_user->attachRole($requested_role);
 
-        return Redirect('/permission');
+        return Redirect('/permission-board');
     }
 }

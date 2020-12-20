@@ -17,7 +17,7 @@
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #d9534f;
+  --red: #9a123f;
   --orange: #fd7e14;
   --yellow: #f0ad4e;
   --green: #4bbf73;
@@ -32,8 +32,8 @@
   --info: #1f9bcf;
   --warning: #f0ad4e;
   --danger: #d9534f;
-  --light: #fff;
-  --dark: #343a40;
+  --light: #efefef;
+  --dark: #2e2d2c;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;

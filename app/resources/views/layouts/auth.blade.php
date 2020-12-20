@@ -12,6 +12,13 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    {{-- <script>
+        $(document).ready(function () {
+            $('body').bootstrapMaterialDesign();
+        });
+
+    </script> --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->
@@ -24,28 +31,12 @@
 
         <div class="d-flex" id="wrapper">
 
-            <!-- Sidebar -->
-            <div class="bg-danger border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">
-                    <a href="{{ url('/dashboard') }}">
-                    <img src="{{ asset('brand/logo_large.png') }}" width="130" alt="brand">
-                    </a>
-                </div>
-                <div class="list-group list-group-flush">
-
-                    @role('admin')
-                    <a href="/permission-board"
-                        class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">Benutzerverwaltung</a>
-                    @endrole
-
-                </div>
-            </div>
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light">
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -53,27 +44,19 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <h3 class="mt-1" ><a class="text-dark" href="/dashboard">Dashboard</a> > Seitenname</h3>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                            {{-- <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li> --}}
 
                             @guest
                             @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="h5 nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @endif
 
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="h5 nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                             @endif
                             @else

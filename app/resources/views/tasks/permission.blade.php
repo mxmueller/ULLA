@@ -6,12 +6,12 @@
         <div class="w-100 p-3">
 
 
-            <div class="card shadow rounded">
-                <div class="card-header">{{ __('Benutzer Manager') }}</div>
+            <div class="card rounded-0 custom-border-default">
+                <div class="card-header font-weight-bold">{{ __('Benutzer Manager') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success " role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
@@ -77,8 +77,8 @@
                 </div>
             </div>
 
-            <div class="card shadow mt-5 rounded">
-                <div class="card-header">{{ __('Verfügbare Rollen') }}</div>
+            <div class="card rounded-0 custom-border-default mt-5">
+                <div class="card-header font-weight-bold">{{ __('Verfügbare Rollen') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -103,8 +103,8 @@
                 </div>
             </div>
 
-            <div class="card shadow mt-5 rounded">
-                <div class="card-header">{{ __('Laratrust') }}</div>
+            <div class="card rounded-0 custom-border-secondary mt-5">
+                <div class="card-header font-weight-bold">{{ __('Laratrust') }}</div>
 
                 <div class="card-body">
                     <a href="/adminpanel" class="btn btn-info" role="button">Backoffice</a>

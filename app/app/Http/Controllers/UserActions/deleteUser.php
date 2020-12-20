@@ -16,6 +16,6 @@ class deleteUser extends Controller
     public function index(Request $deleteRequest)
     {
         User::find($deleteRequest->user_id)->delete();
-        return Redirect('/permission');
+        return Redirect('/permission-board');
     }
 }
