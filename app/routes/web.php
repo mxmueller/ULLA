@@ -38,7 +38,7 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 // Post Requests
 Route::post('/change_user_role', [App\Http\Controllers\UserActions\updateUserRole::class, 'index']);
 Route::post('/delete_user', [App\Http\Controllers\UserActions\deleteUser::class, 'index']);
-
+Route::post('/request_submit_form_data', [App\Http\Controllers\Request\RequestFromSubmit::class, 'index']);
 
 // ----------------------------------------------------------------
 // Application Views

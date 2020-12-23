@@ -72849,7 +72849,11 @@ window.Lightpick = __webpack_require__(/*! lightpick/lightpick */ "./node_module
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Custom Scripts
 
 
-__webpack_require__(/*! ../scripts/request/request.standIn */ "./resources/scripts/request/request.standIn.js");
+__webpack_require__(/*! ../scripts/request/request.stand_in */ "./resources/scripts/request/request.stand_in.js");
+
+__webpack_require__(/*! ../scripts/request/request.checkbox_toggel */ "./resources/scripts/request/request.checkbox_toggel.js");
+
+__webpack_require__(/*! ../scripts/request/request.form */ "./resources/scripts/request/request.form.js");
 
 __webpack_require__(/*! ../scripts/datepicker/datepicker.ini */ "./resources/scripts/datepicker/datepicker.ini.js");
 
@@ -73019,7 +73023,7 @@ $(function () {
         document.getElementById('half-day').innerHTML = date.format('Do MMMM YYYY');
       }
     });
-    var $range = new Lightpick({
+    window.$range = new Lightpick({
       field: document.getElementById('range'),
       singleDate: false,
       onSelect: function onSelect(start, end) {
@@ -73029,15 +73033,155 @@ $(function () {
         document.getElementById('range').innerHTML = str;
       }
     });
+    var $frist_stand_in = new Lightpick({
+      field: document.getElementById('first-stand-in'),
+      onSelect: function onSelect(date) {
+        document.getElementById('first-stand-in').innerHTML = date.format('Do MMMM YYYY');
+      }
+    });
+
+    window.$build_single_lightpick_based_on_id = function ($id) {
+      var $className = $id;
+      $className = new Lightpick({
+        field: document.getElementById($id),
+        onSelect: function onSelect(date) {
+          document.getElementById($id).innerHTML = date.format('Do MMMM YYYY');
+        }
+      });
+    };
   }
 });
 
 /***/ }),
 
-/***/ "./resources/scripts/request/request.standIn.js":
-/*!******************************************************!*\
-  !*** ./resources/scripts/request/request.standIn.js ***!
-  \******************************************************/
+/***/ "./resources/scripts/request/request.checkbox_toggel.js":
+/*!**************************************************************!*\
+  !*** ./resources/scripts/request/request.checkbox_toggel.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+$(function () {
+  var $request_interface_dom = 'request-interface-form';
+
+  if (true) {
+    //pageload
+    var $range = $('#range-input');
+    var $day = $('#day-input');
+    $range.show();
+    $day.hide();
+    $("#toggle-date").change(function () {
+      if ($range.is(":visible")) {
+        $range.hide();
+        $day.show();
+      } else {
+        $range.show();
+        $day.hide();
+      }
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/scripts/request/request.form.js":
+/*!***************************************************!*\
+  !*** ./resources/scripts/request/request.form.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+$(function () {
+  var $request_interface_dom = 'request-interface-form';
+
+  if (true) {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    var $form_submit_btn = $('#form-submit');
+    var $backend_from_request = {};
+    var $stand_in_collection = [];
+    var $stand_in = [];
+    $form_submit_btn.on('click', function () {
+      Object.assign($backend_from_request, {
+        applicant_id: $('#applicant').attr('user_id')
+      }, {
+        executive_id: $('#executive').val()
+      });
+      $('.' + $add_on_identifier).each(function ($key, $value) {
+        var $timestamp = $($value).find('input').val();
+        var $timestamp_split = $timestamp.split("/");
+        var $timestamp_adjusted = new Date(+$timestamp_split[2], $timestamp_split[1] - 1, +$timestamp_split[0]);
+        $stand_in.push({
+          name: $($value).find('select').val(),
+          timestamp: $timestamp_adjusted
+        });
+      });
+      $('div.first-stand-in').each(function ($key, $value) {
+        var $timestamp = $($value).find('input').val();
+        var $timestamp_split = $timestamp.split("/");
+        var $timestamp_adjusted = new Date(+$timestamp_split[2], $timestamp_split[1] - 1, +$timestamp_split[0]);
+        $stand_in.push({
+          name: $($value).find('select').val(),
+          timestamp: $timestamp_adjusted
+        });
+      });
+      $stand_in_collection.push($stand_in.concat());
+      Object.assign($backend_from_request, {
+        _stand_in_collection: $stand_in_collection
+      });
+      var $half_day = null;
+      var $start_tstmp = null;
+      var $end_tstmp = null;
+
+      if ($("#toggle-date").is(':checked')) {
+        $tstmp = new Date($('#day-input').find('input').val());
+        $half_day = true;
+        $start_tstmp = $tstmp;
+        $end_tstmp = $tstmp;
+      } else {
+        $half_day = false;
+        $start_tstmp = new Date($range.getStartDate()._i);
+        $end_tstmp = new Date($range.getEndDate()._i);
+      }
+
+      Object.assign($backend_from_request, {
+        _half_day: $half_day
+      }, {
+        _start_tstmp: $start_tstmp
+      }, {
+        _end_tstmp: $end_tstmp
+      });
+      var $request_comment = null;
+
+      if (!$("#request_comment").val()) {
+        $request_comment = false;
+      } else {
+        $request_comment = $("#request_comment").val();
+      }
+
+      Object.assign($backend_from_request, {
+        request_comment: $request_comment
+      });
+      $.ajax({
+        data: $backend_from_request,
+        type: 'POST',
+        url: '/request_submit_form_data'
+      }).done(function ($data) {
+        console.log($data);
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/scripts/request/request.stand_in.js":
+/*!*******************************************************!*\
+  !*** ./resources/scripts/request/request.stand_in.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -73067,7 +73211,11 @@ $(function () {
             $add_on_first = this.$add_on_first_dom;
         this.$add_on_button.on('click', function (_) {
           var $copy = $add_on.clone();
+          var $id = Math.round(new Date().getTime() + Math.random() * 100);
           $copy.insertAfter($add_on_first[0]).attr("style", "display: block !important");
+          $copy.find('input[name ="daterange"]').attr("id", $id);
+          $copy.addClass($add_on_identifier);
+          $build_single_lightpick_based_on_id($id);
           $enableDelete();
         });
       }
@@ -73085,6 +73233,7 @@ $(function () {
   };
 
   if (true) {
+    window.$add_on_identifier = 'add-on-copy';
     var $enable = new RequestStandIns($('#' + $request_interface_dom));
     $enable.AddOnListener();
   }

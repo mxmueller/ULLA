@@ -14,8 +14,13 @@ $(function () {
 
             this.$add_on_button.on('click', function (_) {
                 let $copy = $add_on.clone();
-                $copy.insertAfter($add_on_first[0]).attr("style", "display: block !important");
+                let $id = Math.round(new Date().getTime() + (Math.random() * 100));
 
+                $copy.insertAfter($add_on_first[0]).attr("style", "display: block !important");
+                $copy.find('input[name ="daterange"]').attr("id", $id);
+                $copy.addClass($add_on_identifier);
+
+                $build_single_lightpick_based_on_id($id);
                 $enableDelete();
             });
         }
@@ -31,6 +36,9 @@ $(function () {
     }
 
     if ('#' + $request_interface_dom) {
+
+        window.$add_on_identifier = 'add-on-copy';
+
         const $enable = new RequestStandIns($('#' + $request_interface_dom));
         $enable.AddOnListener();
     }

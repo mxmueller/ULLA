@@ -10,7 +10,11 @@ window.Lightpick = require('lightpick/lightpick');
 require('./bootstrap'); // Custom Scripts
 
 
-require('../scripts/request/request.standIn');
+require('../scripts/request/request.stand_in');
+
+require('../scripts/request/request.checkbox_toggel');
+
+require('../scripts/request/request.form');
 
 require('../scripts/datepicker/datepicker.ini');
 

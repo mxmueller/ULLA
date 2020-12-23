@@ -9,19 +9,38 @@
                 <div class="card-header">{{ __('Urlaubsantrag erstellen & zuweisen') }}</div>
 
                 <div class="card-body">
+                    <form id="backend-valdiation-request">
+                        @csrf
+                        <div class="form-check w-25 mt-2">
+                            <input type="checkbox" id="toggle-date" class="rounded-0 form-check-input"
+                                id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Halber Tag</label>
+                        </div>
 
-                    <form>
-                        <div class="form-group">
+                        <div class="form-group w-25 mt-2" id="day-input">
+                            <label for="request_comment">Datum festlegen: (Tag wählen)</label>
+                            <input id="half-day" readonly="readonly" class="rounded-0 date-range-picker form-control"
+                                name="daterange" type="text">
+                        </div>
+
+
+                        <div class="form-group w-25 mt-2" id="range-input">
+                            <label for="request_comment">Datum festlegen: (Zeitraum wählen)</label>
+                            <input id="range" readonly="readonly" class="rounded-0 date-range-picker form-control"
+                                name="daterange" type="text">
+                        </div>
+
+                        <div class="form-group w-50">
                             <label for="exampleInputEmail1">Antragsteller</label>
-                            <input class="rounded-0 form-control" type="text" placeholder="{{ Auth::user()->name }}"
+                            <input id="applicant" value="{{ Auth::user()->name }}" user_id="{{ Auth::user()->id }}" class="rounded-0 form-control" type="text" placeholder="{{ Auth::user()->name }}"
                                 readonly>
                             <small id="emailHelp" class="form-text text-muted">Kann nicht bearbeitet werden.</small>
                         </div>
 
-                        <div class="form-group mt-4">
+                        <div class="form-group mt-4 w-50">
                             <label for="exampleFormControlSelect2">Folgendem Mitarbeiter soll der Antrag zur Freigabe
                                 zugewiesen werden:</label>
-                            <select class="rounded-0 form-control form-control">
+                            <select id="executive" class="rounded-0 form-control form-control">
                                 @foreach($executives as $executive)
                                 <option value="{{ $executive->id }}">{{ $executive->name }}</option>
                                 @endforeach
@@ -39,7 +58,6 @@
                                             <label class="float-left">Vertretung(en) hinzufügen:
                                             </label>
                                             <select class="rounded-0 first-stand-in form-control form-control">
-                                                <option selected>Vertretung Auswählen...</option>
                                                 @foreach($stand_ins as $stand_in)
                                                 <option value="{{ $stand_in->id }}">{{ $stand_in->name }}</option>
                                                 @endforeach
@@ -48,13 +66,10 @@
                                         <div class="col-3">
                                             <label class="float-left">Übergabe Datum:
                                             </label>
-                                            <input id="half-day" readonly="readonly"
+                                            <input id="first-stand-in" readonly="readonly"
                                                 class=" rounded-0 date-range-picker form-control" name="daterange"
                                                 type="text">
                                         </div>
-
-
-
                                     </div>
 
                                     <div class="add-on d-none input-group mt-2 row float-left">
@@ -62,7 +77,6 @@
 
                                         <div class="col-3 float-left">
                                             <select class="rounded-0 form-control form-control">
-                                                <option selected>Weitere Vertretung Auswählen...</option>
                                                 @foreach($stand_ins as $stand_in)
                                                 <option value="{{ $stand_in->id }}">{{ $stand_in->name }}</option>
                                                 @endforeach
@@ -70,9 +84,8 @@
                                         </div>
 
                                         <div class="col-3 float-left">
-                                            <input id="half-day" readonly="readonly"
-                                                class=" rounded-0 date-range-picker form-control" name="daterange"
-                                                type="text">
+                                            <input readonly="readonly" class=" rounded-0 date-range-picker form-control"
+                                                name="daterange" type="text">
                                         </div>
 
                                         <div class="col-4 float-left">
@@ -109,34 +122,18 @@
 
                             </div>
                         </div>
-                </div>
 
-                <div class="form-group mt-4 w-25">
-                    <label for="request_comment">Datum festlegen: (halbtags)</label>
-                    <input id="half-day" readonly="readonly" class="rounded-0 date-range-picker form-control"
-                        name="daterange" type="text">
-                </div>
+                        <div class="form-group mt-4">
+                            <label for="request_comment">Antrags Kommentar: (Optional)</label>
+                            <textarea class="rounded-0 form-control" id="request_comment" rows="4"></textarea>
+                        </div>
 
-
-                <div class="form-group w-25 mt-4">
-                    <label for="request_comment">Datum festlegen: (range)</label>
-                    <input id="range" readonly="readonly" class="rounded-0 date-range-picker form-control"
-                        name="daterange" type="text">
+                        <button type="button" id="form-submit" class="btn btn-primary rounded-0">Antrag Abschicken</button>
+                        <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                    </form>
                 </div>
-
-                <div class="form-group mt-4">
-                    <label for="request_comment">Antrags Kommentar: (Optional)</label>
-                    <textarea class="rounded-0 form-control" id="request_comment" rows="4"></textarea>
-                </div>
-
-                <div class="form-check mt-4">
-                    <input type="checkbox" class="rounded-0 form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Halber Tag</label>
-                </div>
-                </form>
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection

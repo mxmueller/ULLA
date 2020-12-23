@@ -19,19 +19,19 @@ $(function () {
       this.$add_on_dom = $form.find('.add-on');
       this.$add_on_first_dom = $form.find('.first-stand-in');
       this.$add_on_button = $form.find('button.add-stand-in');
-      this.$add_id = Math.round(new Date().getTime() + Math.random() * 100);
     }
 
     _createClass(RequestStandIns, [{
       key: "AddOnListener",
       value: function AddOnListener() {
         var $add_on = this.$add_on_dom,
-            $add_on_first = this.$add_on_first_dom,
-            $id = this.$add_id;
+            $add_on_first = this.$add_on_first_dom;
         this.$add_on_button.on('click', function (_) {
           var $copy = $add_on.clone();
+          var $id = Math.round(new Date().getTime() + Math.random() * 100);
           $copy.insertAfter($add_on_first[0]).attr("style", "display: block !important");
           $copy.find('input[name ="daterange"]').attr("id", $id);
+          $copy.addClass($add_on_identifier);
           $build_single_lightpick_based_on_id($id);
           $enableDelete();
         });
@@ -50,6 +50,7 @@ $(function () {
   };
 
   if ('#' + $request_interface_dom) {
+    window.$add_on_identifier = 'add-on-copy';
     var $enable = new RequestStandIns($('#' + $request_interface_dom));
     $enable.AddOnListener();
   }

@@ -10,7 +10,7 @@ $(function () {
         document.getElementById('half-day').innerHTML = date.format('Do MMMM YYYY');
       }
     });
-    var $range = new Lightpick({
+    window.$range = new Lightpick({
       field: document.getElementById('range'),
       singleDate: false,
       onSelect: function onSelect(start, end) {
@@ -20,5 +20,21 @@ $(function () {
         document.getElementById('range').innerHTML = str;
       }
     });
+    var $frist_stand_in = new Lightpick({
+      field: document.getElementById('first-stand-in'),
+      onSelect: function onSelect(date) {
+        document.getElementById('first-stand-in').innerHTML = date.format('Do MMMM YYYY');
+      }
+    });
+
+    window.$build_single_lightpick_based_on_id = function ($id) {
+      var $className = $id;
+      $className = new Lightpick({
+        field: document.getElementById($id),
+        onSelect: function onSelect(date) {
+          document.getElementById($id).innerHTML = date.format('Do MMMM YYYY');
+        }
+      });
+    };
   }
 });
