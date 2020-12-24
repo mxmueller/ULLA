@@ -36,7 +36,6 @@ $(function () {
     }
 
     if ('#' + $request_interface_dom) {
-
         window.$add_on_identifier = 'add-on-copy';
 
         const $enable = new RequestStandIns($('#' + $request_interface_dom));

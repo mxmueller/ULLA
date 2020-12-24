@@ -10,13 +10,13 @@ window.Lightpick = require('lightpick/lightpick');
 require('./bootstrap'); // Custom Scripts
 
 
-require('../scripts/request/request.stand_in');
+require('../scripts/request/request-stand-in');
 
-require('../scripts/request/request.checkbox_toggel');
+require('../scripts/request/request-checkbox-toggel');
 
-require('../scripts/request/request.form');
+require('../scripts/request/request-form');
 
-require('../scripts/datepicker/datepicker.ini');
+require('../scripts/datepicker/datepicker-lightpick');
 
 window.Vue = require('vue');
 /**

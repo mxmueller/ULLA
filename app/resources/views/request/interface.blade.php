@@ -11,7 +11,17 @@
                 <div class="card-body">
                     <form id="backend-valdiation-request">
                         @csrf
-                        <div class="form-check w-25 mt-2">
+
+                        <div class="form-group w-50">
+                            <label for="exampleFormControlSelect2">Antrags Typ:</label>
+                            <select id="type" class="rounded-0 form-control form-control">
+                                @foreach($request_types as $request_type)
+                                <option value="{{ $request_type->id }}">{{ $request_type->description }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-check w-25 mt-4">
                             <input type="checkbox" id="toggle-date" class="rounded-0 form-check-input"
                                 id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Halber Tag</label>

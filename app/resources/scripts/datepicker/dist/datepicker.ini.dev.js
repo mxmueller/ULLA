@@ -4,7 +4,7 @@ $(function () {
   var $request_interface_dom = 'request-interface-form';
 
   if ('#' + $request_interface_dom) {
-    var $half_day_pick = new Lightpick({
+    window.$half_day_pick = new Lightpick({
       field: document.getElementById('half-day'),
       onSelect: function onSelect(date) {
         document.getElementById('half-day').innerHTML = date.format('Do MMMM YYYY');

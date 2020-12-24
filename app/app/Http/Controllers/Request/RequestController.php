@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Tasks;
+namespace App\Http\Controllers\Request;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Request_type;
 
 class RequestController extends Controller
 {
@@ -14,12 +15,18 @@ class RequestController extends Controller
     {
         $executives = $this->Executives();
         $stand_ins = $this->StandIn();
+        $request_types = $this->Types();
 
-        return view(
-            'request.interface',
-            compact('executives'),
-            compact('stand_ins')
-        );
+        return view('request.interface', [
+            'executives' => $executives,
+            'stand_ins' => $stand_ins,
+            'request_types' => $request_types
+        ]);
+    }
+
+    private function Types() {
+        $types = Request_type::all();
+        return $types;
     }
 
     private function StandIn()

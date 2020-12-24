@@ -3,7 +3,7 @@ $(function () {
 
     if ('#' + $request_interface_dom) {
 
-        let $half_day_pick = new Lightpick({
+        window.$half_day_pick = new Lightpick({
             field: document.getElementById('half-day'),
             onSelect: function (date) {
                 document.getElementById('half-day').innerHTML = date.format('Do MMMM YYYY');

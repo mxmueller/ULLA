@@ -43,7 +43,7 @@ Route::post('/request_submit_form_data', [App\Http\Controllers\Request\RequestFr
 // ----------------------------------------------------------------
 // Application Views
 Route::get('/permission-board', [App\Http\Controllers\Tasks\PermissionController::class, 'index'])->name('permission-board');
-Route::get('/request-interface', [App\Http\Controllers\Tasks\RequestController::class, 'index'])->name('request-interface');
+Route::get('/request-interface', [App\Http\Controllers\Request\RequestController::class, 'index'])->name('request-interface');
 
 Auth::routes();
 
