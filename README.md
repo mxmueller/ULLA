@@ -51,6 +51,7 @@ Seeds:
 ```
 php artisan db:seed --class=ullaDefaultRoleSeeder
 php artisan db:seed --class=ullaDefaultAdminSeed
+php artisan db:seed --class=ullaDefaultRequestTypeSeeder
 ```
 
 <br>
