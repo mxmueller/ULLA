@@ -11,17 +11,19 @@ use App\Models\Comment as CommentModel;
 use App\Models\Request as RequestModel;
 use App\Models\Request_type as RequestTypeModel;
 use App\Models\Period as PeriodModel;
-use App\Models\Human_resource as Human_resourceModel;
+use App\Models\User as UserModel;
+use App\Models\User_stand_in as UserStandInModel;
+use App\Models\Human_resource as HumanResourceModel;
 
 class RequestFromSubmit extends Controller
 {
     public function index(Request $request)
     {
-        $this->logRequest($request);
+        $this->log($request);
         $this->db($request);
     }
 
-    private function logRequest($request){
+    private function log($request){
         $request = ["raw" => $request];
         $requestLog = new Logger('request');
         $requestLog->pushHandler(new StreamHandler(storage_path('logs/requests/request.log')), Logger::INFO);
@@ -37,6 +39,8 @@ class RequestFromSubmit extends Controller
         }
         function request($commentModel, $request) {
             $requestModel = new RequestModel;
+            $requestModel->rejected = false;
+            $requestModel->granted = false;
             $requestModel->request_type_id = $request->request_type_id;
 
             if(is_null($commentModel)){
@@ -45,11 +49,31 @@ class RequestFromSubmit extends Controller
                 $commentModel->comment_request()->save($requestModel);
             }
 
-            $periodModell = new PeriodModel;
-            $periodModell->start_tstmp = intval($request->_start_tstmp);
-            $periodModell->end_tstmp = intval($request->_end_tstmp);
-            $periodModell->half_day = $request->_half_day;
-            $requestModel->period()->save($periodModell);
+            $periodModel = new PeriodModel;
+            $periodModel->start_tstmp = intval($request->_start_tstmp);
+            $periodModel->end_tstmp = intval($request->_end_tstmp);
+            $periodModel->half_day = $request->_half_day;
+            $requestModel->period()->save($periodModel);
+
+            $humanResourceModel = new HumanResourceModel;
+            $requestModel->human_resource()->save($humanResourceModel);
+
+            $humanResourceModelId = $humanResourceModel->id;
+
+            $humanResourceEntry = HumanResourceModel::find($humanResourceModelId);
+            $executive = UserModel::find($request->executive_id);
+            $creator = UserModel::find($request->applicant_id);
+            $humanResourceEntry->executive()->associate($executive)->save();
+            $humanResourceEntry->creator()->associate($creator)->save();
+
+            $stand_in_user_collection = $request->_stand_in_collection[0];
+                foreach ($stand_in_user_collection as $stand_in) {
+                    $standInModel = new UserStandInModel;
+                    $standInModel->request_stand_in_id = $requestModel->id;
+                    $standInModel->user_id = $stand_in['name'];
+                    $standInModel->over_handing_tstmp = $stand_in['timestamp'];
+                    $standInModel->save();
+            }
         }
 
         if ($request->request_comment === 'false') {

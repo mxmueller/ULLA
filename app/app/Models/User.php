@@ -42,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // public function stand_in_requests()
+    // {
+    //     return $this->hasOne(User_stand_in::class, 'request_stand_in_id', 'id');
+    // }
 }
