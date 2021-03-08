@@ -14,8 +14,15 @@ class CreateUserStandInsTable extends Migration
     public function up()
     {
         Schema::create('user_stand_ins', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('request_stand_in_id');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->bigInteger('over_handing_tstmp')->nullable();
             $table->timestamps();
+
+            $table->foreign('request_stand_in_id')->references('id')->on('requests');
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->primary(['request_stand_in_id', 'user_id']);
         });
     }
 

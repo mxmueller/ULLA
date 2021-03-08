@@ -54,4 +54,9 @@ class Request extends Model
     {
         return $this->hasOne(Human_resource::class, 'id', 'id');
     }
+
+    public function stand_in_users()
+    {
+        return $this->hasOne(User_stand_in::class, 'id', 'id');
+    }
 }

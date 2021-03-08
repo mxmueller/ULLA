@@ -21,6 +21,7 @@ class CreatePeriodsTable extends Migration
             $table->timestamps();
 
             $table->foreign('id')->references('id')->on('requests');
+
         });
     }
 

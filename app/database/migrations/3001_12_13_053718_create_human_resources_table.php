@@ -15,11 +15,13 @@ class CreateHumanResourcesTable extends Migration
     {
         Schema::create('human_resources', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('creator');
-            $table->unsignedBigInteger('executive');
+            $table->unsignedBigInteger('creator')->nullable();
+            $table->unsignedBigInteger('executive')->nullable();
             $table->timestamps();
 
             $table->foreign('id')->references('id')->on('requests');
+            $table->foreign('creator')->references('id')->on('users');
+            $table->foreign('executive')->references('id')->on('users');
         });
     }
 

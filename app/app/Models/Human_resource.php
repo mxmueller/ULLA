@@ -17,4 +17,14 @@ class Human_resource extends Model
     {
         return $this->belongsTo(Request::class, 'id', 'id');
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'creator', 'id');
+    }
+
+    public function executive()
+    {
+        return $this->belongsTo(User::class, 'executive', 'id');
+    }
 }
