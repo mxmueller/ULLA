@@ -21,25 +21,29 @@ class RequestFromSubmit extends Controller
         $this->db($request);
     }
 
-    private function logRequest($request){
+    private function logRequest($request)
+    {
         $request = ["raw" => $request];
         $requestLog = new Logger('request');
         $requestLog->pushHandler(new StreamHandler(storage_path('logs/requests/request.log')), Logger::INFO);
         $requestLog->info('json ->', $request);
     }
 
-    private function db($request){
-        function requestComment($comment) {
+    private function db($request)
+    {
+        function requestComment($comment)
+        {
             $commentModel = new CommentModel;
             $commentModel->comment = $comment;
             $commentModel->save();
             return $commentModel;
         }
-        function request($commentModel, $request) {
+        function request($commentModel, $request)
+        {
             $requestModel = new RequestModel;
             $requestModel->request_type_id = $request->request_type_id;
 
-            if(is_null($commentModel)){
+            if (is_null($commentModel)) {
                 $requestModel->save();
             } else {
                 $commentModel->comment_request()->save($requestModel);

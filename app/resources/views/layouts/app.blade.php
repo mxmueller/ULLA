@@ -14,8 +14,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
-      <!-- Styles -->
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -26,7 +26,7 @@
         <div class="d-flex" id="wrapper">
 
             <!-- Sidebar -->
-            <div class="bg-danger border-right" id="sidebar-wrapper">
+            <div class="bg-danger border-right gradient-primary" id="sidebar-wrapper">
                 <div class="sidebar-heading">
                     <a href="{{ url('/dashboard') }}">
                         <img src="{{ asset('brand/logo_large.png') }}" width="130" alt="brand">
@@ -35,46 +35,41 @@
                 <div class="list-group list-group-flush">
 
                     @role('admin')
-                    <a href="/permission-board"
-                        class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">Benutzerverwaltung</a>
+                    <a href="/permission-board" class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">Benutzerverwaltung</a>
                     @endrole
 
                     @role('admin')
-                    <a href="/request-interface"
-                        class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
+                    <a href="/request-interface" class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                          </svg>
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
                         Antrag stellen
                     </a>
                     @endrole
 
                     @role('staff')
-                    <a href="/request-interface"
-                        class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
+                    <a href="/request-interface" class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                          </svg>
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
                         Antrag stellen
                     </a>
                     @endrole
 
                     @role('accounting')
-                    <a href="/request-interface"
-                        class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
+                    <a href="/request-interface" class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                          </svg>
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
                         Antrag stellen
                     </a>
                     @endrole
 
                     @role('executive')
-                    <a href="/request-interface"
-                        class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
+                    <a href="/request-interface" class="selected-item border-0 list-group-item list-group-item-action bg-danger text-light ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                          </svg>
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
                         Antrag stellen
                     </a>
                     @endrole
@@ -88,9 +83,7 @@
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -119,12 +112,9 @@
                             @endif
                             @else
                             <li class="nav-item dropdown">
-                                <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="25" fill="currentColor"
-                                        class="bi bi-person-fill" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                     </svg>
 
                                     {{ Auth::user()->name }}

@@ -1,13 +1,14 @@
-@extends('layouts.auth')
+@extends('layouts.alternate')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="w-75 p-3">
-            <div class="card shadow-sm rounded-0 custom-border-primary">
+            <div class="card shadow-sm rounded-0">
                 <div class="card-header border-0 h3 bg-white">
                     <img class="mr-2" src="{{ asset('brand/logo_round_black.png') }}" width="50" alt="brand">
-                    {{ __('Register') }}</div>
+                    {{ __('Register') }}
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -20,9 +21,9 @@
                                 <input id="name" type="text" class="rounded-0 border-dark form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -34,9 +35,9 @@
                                 <input id="email" type="email" class="rounded-0 border-dark form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -48,9 +49,9 @@
                                 <input id="password" type="password" class="rounded-0 border-dark form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>

@@ -1,10 +1,10 @@
-@extends('layouts.auth')
+@extends('layouts.alternate')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="w-75 p-3">
-            <div class="card shadow-sm rounded-0 custom-border-primary">
+            <div class="card shadow-sm rounded-0">
                 <div class="card-header border-0 h3 bg-white">
                     <img class="mr-2" src="{{ asset('brand/logo_round_black.png') }}" width="50" alt="brand">
                     {{ __('Login') }}
@@ -21,9 +21,9 @@
                                 <input id="email" type="email" class="rounded-0 border-dark form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                                 <input id="password" type="password" class="rounded-0 border-dark form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -61,9 +61,9 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-dark" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                <a class="btn btn-link text-dark" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
                                 @endif
                             </div>
                         </div>

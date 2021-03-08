@@ -10,6 +10,19 @@
 @import '~lightpick/scss/lightpick.scss';
 
 
+// CI
+.gradient-primary {
+background-image: linear-gradient(to top, #9a123f 0%, #C23E5E 100%) !important;
+background: linear-gradient(to top, #9a123f 0%, #C23E5E 100%) !important;
+}
+
+.gradient-secondary {
+background: hsla(259, 84%, 78%, 1);
+background: linear-gradient(90deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
+background: -moz-linear-gradient(90deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
+background: -webkit-linear-gradient(90deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 67%, 75%, 1) 100%);
+}
+
 #wrapper {
     overflow-x: hidden;
 }
@@ -28,11 +41,12 @@
     font-size: 1.2rem;
 }
 
+
 #sidebar-wrapper .list-group {
     width: 15rem;
 
     a.selected-item {
-        background-color: #821338d1 !important;
+            background-color: #79797930 !important;
         border-bottom: 2px solid white !important;
     }
 }
@@ -73,4 +87,6 @@
     border: 3px solid #efefef !important;
 }
 
-
+.login-spanner {
+    height:100vh;
+}
