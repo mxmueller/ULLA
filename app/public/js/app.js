@@ -73168,7 +73168,7 @@ $(function () {
         type: 'POST',
         url: '/request_submit_form_data'
       }).done(function ($data) {
-        console.log($data);
+        window.location.href = "/request-submit-success";
       });
     });
   }

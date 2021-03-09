@@ -1,4 +1,88 @@
-@import url(//db.onlinewebfonts.com/c/5c773d1586db24bd45dfd4af3a4542e7?family=Shentox);@charset "UTF-8";
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Shentox-SemiBoldItalic";
+  src: url(/fonts/38BBE9_0_0.eot?443c54df377de0487971ed25142a049b);
+  src: url(/fonts/38BBE9_0_0.eot?443c54df377de0487971ed25142a049b) format("embedded-opentype"), url(/fonts/38BBE9_0_0.woff2?f56192bff464f4066243c13c64765f35) format("woff2"), url(/fonts/38BBE9_0_0.woff?629eea03cf78d25ccd8ac7b3733b8b41) format("woff"), url(/fonts/38BBE9_0_0.ttf?df0bd98a54279b7d9042b4cdc796de2d) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-ThinItalic";
+  src: url(/fonts/38BBE9_1_0.eot?74889270b4c7df4c8f6fc4d49a7ca018);
+  src: url(/fonts/38BBE9_1_0.eot?74889270b4c7df4c8f6fc4d49a7ca018) format("embedded-opentype"), url(/fonts/38BBE9_1_0.woff2?c05ed44f54fb34f5caf7280858571b7e) format("woff2"), url(/fonts/38BBE9_1_0.woff?45d60d4ea6ced1b6d7dd89069fc9aa9c) format("woff"), url(/fonts/38BBE9_1_0.ttf?fc29d5dcf9fe689cefcafde85b6843f7) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-Thin";
+  src: url(/fonts/38BBE9_2_0.eot?01145044790b57f8a76ca5d0f250b120);
+  src: url(/fonts/38BBE9_2_0.eot?01145044790b57f8a76ca5d0f250b120) format("embedded-opentype"), url(/fonts/38BBE9_2_0.woff2?81e33bf8297582f928b1831382a939e2) format("woff2"), url(/fonts/38BBE9_2_0.woff?57f53b032b5534764824097ca85ba7cd) format("woff"), url(/fonts/38BBE9_2_0.ttf?493447c354f789ac3c2dde8009580a80) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-SemiBold";
+  src: url(/fonts/38BBE9_3_0.eot?8c5f2c4bad4216aee7d2110040ae8924);
+  src: url(/fonts/38BBE9_3_0.eot?8c5f2c4bad4216aee7d2110040ae8924) format("embedded-opentype"), url(/fonts/38BBE9_3_0.woff2?e2b179246c329f613f48ddfc5ddf3d1d) format("woff2"), url(/fonts/38BBE9_3_0.woff?bb39b298a5ca9ffe039b697c06d0afd0) format("woff"), url(/fonts/38BBE9_3_0.ttf?95e2b8480b8595f35d5c1bdadaa9917d) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-UltraLight";
+  src: url(/fonts/38BBE9_4_0.eot?28ff797d793c88c4366e144a8f57940f);
+  src: url(/fonts/38BBE9_4_0.eot?28ff797d793c88c4366e144a8f57940f) format("embedded-opentype"), url(/fonts/38BBE9_4_0.woff2?01c8d7c46a571f3aac6be949f02fd725) format("woff2"), url(/fonts/38BBE9_4_0.woff?0c892fc4d06dfd6b7195ebd827b60354) format("woff"), url(/fonts/38BBE9_4_0.ttf?5989cb97a659e20e89045ce0d134475b) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-RegularItalic";
+  src: url(/fonts/38BBE9_5_0.eot?097a268970267984f286fa12742367da);
+  src: url(/fonts/38BBE9_5_0.eot?097a268970267984f286fa12742367da) format("embedded-opentype"), url(/fonts/38BBE9_5_0.woff2?fe1baddea1e5cc5047d5c259467b51f6) format("woff2"), url(/fonts/38BBE9_5_0.woff?961e37da055a75e519b93a4933d0ae5d) format("woff"), url(/fonts/38BBE9_5_0.ttf?ac01191d469f883d0d08f2de91fc7692) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-Regular";
+  src: url(/fonts/38BBE9_6_0.eot?5959325dca68801935c94edc56966563);
+  src: url(/fonts/38BBE9_6_0.eot?5959325dca68801935c94edc56966563) format("embedded-opentype"), url(/fonts/38BBE9_6_0.woff2?48e60f172f5cc454eeae78399befebd6) format("woff2"), url(/fonts/38BBE9_6_0.woff?9f51587ed6871e41f5a14e1cf26eed90) format("woff"), url(/fonts/38BBE9_6_0.ttf?c612960ad568a6906aa043f9ee3ce1ac) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-Medium";
+  src: url(/fonts/38BBE9_7_0.eot?3ff5138e1ba16a13e200338b392cdf9a);
+  src: url(/fonts/38BBE9_7_0.eot?3ff5138e1ba16a13e200338b392cdf9a) format("embedded-opentype"), url(/fonts/38BBE9_7_0.woff2?d8da333f739a33c56a823deb10b65f6d) format("woff2"), url(/fonts/38BBE9_7_0.woff?a17494aa97fbc06e50d2eae602f44f25) format("woff"), url(/fonts/38BBE9_7_0.ttf?0d85feb7fea8648630631de1ba94aa3d) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-MediumItalic";
+  src: url(/fonts/38BBE9_8_0.eot?d1a17336744fc9eef2d45fe3f34a0968);
+  src: url(/fonts/38BBE9_8_0.eot?d1a17336744fc9eef2d45fe3f34a0968) format("embedded-opentype"), url(/fonts/38BBE9_8_0.woff2?1584b3f3c01138b0860b21a7aa3d424d) format("woff2"), url(/fonts/38BBE9_8_0.woff?4f99cb6ed7d929284bc24e9d5cb7a2e0) format("woff"), url(/fonts/38BBE9_8_0.ttf?6ca8aaf4fddad96a23e6de703acecb92) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-LightItalic";
+  src: url(/fonts/38BBE9_9_0.eot?e378693acf4b9dfba6d4ddc5bbd18695);
+  src: url(/fonts/38BBE9_9_0.eot?e378693acf4b9dfba6d4ddc5bbd18695) format("embedded-opentype"), url(/fonts/38BBE9_9_0.woff2?1705d6f5f4a0de7571be994bb6e7c073) format("woff2"), url(/fonts/38BBE9_9_0.woff?3a7b9344eb01a4ad66c97b9407b58a1d) format("woff"), url(/fonts/38BBE9_9_0.ttf?341ec8a5b77bbb0e9baaf680f459c636) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-Light";
+  src: url(/fonts/38BBE9_A_0.eot?505a5bf8ca67e4865ab4823440e0cd52);
+  src: url(/fonts/38BBE9_A_0.eot?505a5bf8ca67e4865ab4823440e0cd52) format("embedded-opentype"), url(/fonts/38BBE9_A_0.woff2?4692f1b655862babe5ef32776d2926c0) format("woff2"), url(/fonts/38BBE9_A_0.woff?a3a528432a68cbdce4397eeee4f68d88) format("woff"), url(/fonts/38BBE9_A_0.ttf?519fa75bc2a61996f4fecc9a88726248) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-BoldItalic";
+  src: url(/fonts/38BBE9_B_0.eot?baf19f4d2688db7852f5180a20210ed1);
+  src: url(/fonts/38BBE9_B_0.eot?baf19f4d2688db7852f5180a20210ed1) format("embedded-opentype"), url(/fonts/38BBE9_B_0.woff2?51da8d7989b1e1e1a42a57be32b63391) format("woff2"), url(/fonts/38BBE9_B_0.woff?43a838df80f7ae9cb4d210fd92b36774) format("woff"), url(/fonts/38BBE9_B_0.ttf?63f83b226df8301abb0b3e979d4f5355) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-Bold";
+  src: url(/fonts/38BBE9_C_0.eot?d5873c3007b42b895cc976486f5dcef7);
+  src: url(/fonts/38BBE9_C_0.eot?d5873c3007b42b895cc976486f5dcef7) format("embedded-opentype"), url(/fonts/38BBE9_C_0.woff2?25446afe08077d4302c68603af10d3d6) format("woff2"), url(/fonts/38BBE9_C_0.woff?505c391ae9c817bbe441a453e72d8ca4) format("woff"), url(/fonts/38BBE9_C_0.ttf?350fec8fd1615e5cc52acb75ae5128f7) format("truetype");
+}
+
+@font-face {
+  font-family: "Shentox-UltraLightItalic";
+  src: url(/fonts/38BBE9_D_0.eot?8fe1f9f19c428b1557026ecbeecb8e40);
+  src: url(/fonts/38BBE9_D_0.eot?8fe1f9f19c428b1557026ecbeecb8e40) format("embedded-opentype"), url(/fonts/38BBE9_D_0.woff2?32e6bd3c759f0bb8ca5dbdb5f826c02e) format("woff2"), url(/fonts/38BBE9_D_0.woff?0bd5e541a6b402aae8323c115ef51a77) format("woff"), url(/fonts/38BBE9_D_0.ttf?4c981e6d23999c6c4a69dfded8f6c399) format("truetype");
+}
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -34,7 +118,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Shentox", sans-serif;
+  --font-family-sans-serif: "Shentox-Regular", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +150,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Shentox", sans-serif;
+  font-family: "Shentox-Regular", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6374,7 +6458,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Shentox", sans-serif;
+  font-family: "Shentox-Regular", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6499,7 +6583,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Shentox", sans-serif;
+  font-family: "Shentox-Regular", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;

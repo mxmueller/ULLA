@@ -1,5 +1,74 @@
 // Fonts
-@import url(//db.onlinewebfonts.com/c/5c773d1586db24bd45dfd4af3a4542e7?family=Shentox);
+@font-face {
+  font-family: 'Shentox-SemiBoldItalic';
+  src: url("../fonts/38BBE9_0_0.eot");
+  src: url("../fonts/38BBE9_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_0_0.woff2") format("woff2"), url("../fonts/38BBE9_0_0.woff") format("woff"), url("../fonts/38BBE9_0_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-ThinItalic';
+  src: url("../fonts/38BBE9_1_0.eot");
+  src: url("../fonts/38BBE9_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_1_0.woff2") format("woff2"), url("../fonts/38BBE9_1_0.woff") format("woff"), url("../fonts/38BBE9_1_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-Thin';
+  src: url("../fonts/38BBE9_2_0.eot");
+  src: url("../fonts/38BBE9_2_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_2_0.woff2") format("woff2"), url("../fonts/38BBE9_2_0.woff") format("woff"), url("../fonts/38BBE9_2_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-SemiBold';
+  src: url("../fonts/38BBE9_3_0.eot");
+  src: url("../fonts/38BBE9_3_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_3_0.woff2") format("woff2"), url("../fonts/38BBE9_3_0.woff") format("woff"), url("../fonts/38BBE9_3_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-UltraLight';
+  src: url("../fonts/38BBE9_4_0.eot");
+  src: url("../fonts/38BBE9_4_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_4_0.woff2") format("woff2"), url("../fonts/38BBE9_4_0.woff") format("woff"), url("../fonts/38BBE9_4_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-RegularItalic';
+  src: url("../fonts/38BBE9_5_0.eot");
+  src: url("../fonts/38BBE9_5_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_5_0.woff2") format("woff2"), url("../fonts/38BBE9_5_0.woff") format("woff"), url("../fonts/38BBE9_5_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-Regular';
+  src: url("../fonts/38BBE9_6_0.eot");
+  src: url("../fonts/38BBE9_6_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_6_0.woff2") format("woff2"), url("../fonts/38BBE9_6_0.woff") format("woff"), url("../fonts/38BBE9_6_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-Medium';
+  src: url("../fonts/38BBE9_7_0.eot");
+  src: url("../fonts/38BBE9_7_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_7_0.woff2") format("woff2"), url("../fonts/38BBE9_7_0.woff") format("woff"), url("../fonts/38BBE9_7_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-MediumItalic';
+  src: url("../fonts/38BBE9_8_0.eot");
+  src: url("../fonts/38BBE9_8_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_8_0.woff2") format("woff2"), url("../fonts/38BBE9_8_0.woff") format("woff"), url("../fonts/38BBE9_8_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-LightItalic';
+  src: url("../fonts/38BBE9_9_0.eot");
+  src: url("../fonts/38BBE9_9_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_9_0.woff2") format("woff2"), url("../fonts/38BBE9_9_0.woff") format("woff"), url("../fonts/38BBE9_9_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-Light';
+  src: url("../fonts/38BBE9_A_0.eot");
+  src: url("../fonts/38BBE9_A_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_A_0.woff2") format("woff2"), url("../fonts/38BBE9_A_0.woff") format("woff"), url("../fonts/38BBE9_A_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-BoldItalic';
+  src: url("../fonts/38BBE9_B_0.eot");
+  src: url("../fonts/38BBE9_B_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_B_0.woff2") format("woff2"), url("../fonts/38BBE9_B_0.woff") format("woff"), url("../fonts/38BBE9_B_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-Bold';
+  src: url("../fonts/38BBE9_C_0.eot");
+  src: url("../fonts/38BBE9_C_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_C_0.woff2") format("woff2"), url("../fonts/38BBE9_C_0.woff") format("woff"), url("../fonts/38BBE9_C_0.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Shentox-UltraLightItalic';
+  src: url("../fonts/38BBE9_D_0.eot");
+  src: url("../fonts/38BBE9_D_0.eot?#iefix") format("embedded-opentype"), url("../fonts/38BBE9_D_0.woff2") format("woff2"), url("../fonts/38BBE9_D_0.woff") format("woff"), url("../fonts/38BBE9_D_0.ttf") format("truetype");
+}
 
 // Variables
 @import 'variables';

@@ -45,8 +45,9 @@ Route::post('/request_submit_form_data', [App\Http\Controllers\Request\RequestFr
 Route::get('/permission-board', [App\Http\Controllers\Tasks\PermissionController::class, 'index'])->name('permission-board');
 Route::get('/request-interface', [App\Http\Controllers\Request\RequestController::class, 'index'])->name('request-interface');
 Route::get('/request-view', [App\Http\Controllers\Request\RequestView::class, 'index'])->name('request-view');
+Route::get('/request-overview', [App\Http\Controllers\Request\RequestOverview::class, 'index'])->name('request-overview');
+Route::get('/request-submit-success', function () {
+    return view('request.success');
+});
 
 Auth::routes();
-
-
-

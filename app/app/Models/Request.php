@@ -57,6 +57,6 @@ class Request extends Model
 
     public function stand_in_users()
     {
-        return $this->hasOne(User_stand_in::class, 'id', 'id');
+        return $this->hasOne(User_stand_in::class, 'id', 'request_stand_in_id');
     }
 }
