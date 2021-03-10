@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Request;
 
+use App\Traits\StatusValidatorTrait;
+use App\Traits\ResolveTimestampTrait;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\User_stand_in;
@@ -11,59 +14,57 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Request as request_db_model;
 
-use Illuminate\Support\Facades\Storage;
-
-
 class RequestOverview extends Controller
 {
 
+    use StatusValidatorTrait;
+    use ResolveTimestampTrait;
+
     public function index()
     {
-        $overview = $this->overview();
-
-        dd($overview);
-
-        return view('request.overview', compact('overview'));
+        $requestOverviewArray = $this->BuildRequestOverviewArray();
+        return view('request.overview', compact('requestOverviewArray'));
     }
 
-    private function overview()
+    private function BuildRequestOverviewArray()
     {
+        $OverviewRequest = collect();
+        $this->EssentialArguments();
 
-        $user_id = Auth::user()->id;
-        $human_resource = human_resource_db_model::all();
-        $overview_collection = collect();
 
-        function getStatus($request_model)
-        {
-            $request_overview_status_json = Storage::disk('local')->get('json/request_overview_status_svg.json');
-            $request_overview_status_json_decode = json_decode($request_overview_status_json, true);
-            if ($request_model->granted == 0 && $request_model->rejected == 0)
-                return $request_overview_status_json_decode['profile_pending'];
-            if ($request_model->granted == 1 && $request_model->rejected == 0)
-                return $request_overview_status_json_decode['profile_granted'];
-            if ($request_model->granted == 0 && $request_model->rejected == 1)
-                return $request_overview_status_json_decode['profile_denied'];
-        }
+        foreach ($this->hmr as $hmrEntry) {
+            if ($hmrEntry->creator == $this->userId) {
 
-        foreach ($human_resource as $human_resource_entry) {
-            if ($human_resource_entry->creator == $user_id) {
+                $request = $this->FetchRequestModel($hmrEntry->id);
 
-                $id = $human_resource_entry->id;
-
-                $status_collection = getStatus(request_db_model::find($id));
-                $period_modell = request_db_model::find($id)->period;
-
-                $overview_collection->push([
-                    'status_array' => $status_collection,
-                    'timestamp_start' => $period_modell->start_tstmp,
-                    'timestamp_end' => $period_modell->end_tstmp,
-                    'halfday_bool' => $period_modell->half_day
+                $OverviewRequest->push([
+                    'status' => $this->StatusValidator($request),
+                    'timestamps' => [
+                        'start' =>
+                        $this->EpochConverter($request->period->start_tstmp),
+                        'end' =>
+                        $this->EpochConverter($request->period->end_tstmp)
+                    ],
+                    'arguments' => [
+                        'halfday' =>
+                        $request->period->half_day,
+                        'id' =>
+                        $request->id
+                    ]
                 ]);
             }
         }
+        return $OverviewRequest;
+    }
 
+    private function EssentialArguments()
+    {
+        $this->userId = Auth::user()->id;
+        $this->hmr = human_resource_db_model::all();
+    }
 
-        $overview_collection->all();
-        return $overview_collection;
+    protected function FetchRequestModel($id)
+    {
+        return request_db_model::find($id);
     }
 }
