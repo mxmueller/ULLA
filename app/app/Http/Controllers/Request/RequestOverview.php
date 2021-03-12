@@ -20,30 +20,35 @@ class RequestOverview extends Controller
     use StatusValidatorTrait;
     use ResolveTimestampTrait;
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $requestOverviewArray = $this->BuildRequestOverviewArray();
+        $requestOverviewArray = $this->buildRequestOverviewArray();
         return view('request.overview', compact('requestOverviewArray'));
     }
 
-    private function BuildRequestOverviewArray()
+    private function buildRequestOverviewArray()
     {
-        $OverviewRequest = collect();
-        $this->EssentialArguments();
+        $overviewRequest = collect();
+        $this->essentialArguments();
 
 
         foreach ($this->hmr as $hmrEntry) {
             if ($hmrEntry->creator == $this->userId) {
 
-                $request = $this->FetchRequestModel($hmrEntry->id);
+                $request = $this->fetchRequestModel($hmrEntry->id);
 
-                $OverviewRequest->push([
-                    'status' => $this->StatusValidator($request),
+                $overviewRequest->push([
+                    'status' => $this->statusValidator($request),
                     'timestamps' => [
                         'start' =>
-                        $this->EpochConverter($request->period->start_tstmp),
+                        $this->epochConverter($request->period->start_tstmp),
                         'end' =>
-                        $this->EpochConverter($request->period->end_tstmp)
+                        $this->epochConverter($request->period->end_tstmp)
                     ],
                     'arguments' => [
                         'halfday' =>
@@ -54,16 +59,16 @@ class RequestOverview extends Controller
                 ]);
             }
         }
-        return $OverviewRequest;
+        return $overviewRequest;
     }
 
-    private function EssentialArguments()
+    private function essentialArguments()
     {
         $this->userId = Auth::user()->id;
         $this->hmr = human_resource_db_model::all();
     }
 
-    protected function FetchRequestModel($id)
+    protected function fetchRequestModel($id)
     {
         return request_db_model::find($id);
     }

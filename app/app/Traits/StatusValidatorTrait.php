@@ -6,42 +6,42 @@ use Illuminate\Support\Facades\Storage;
 
 trait StatusValidatorTrait
 {
-    public function LoadStatusStorage()
+    public function loadStatusStorage()
     {
         $this->storage_json = Storage::disk('local')->get('json/request_overview_status_svg.json');
         $this->storage_json_decode = json_decode($this->storage_json, true);
         return $this->storage_json_decode;
     }
 
-    public function StatusValidator($request_model)
+    public function statusValidator($request_model)
     {
 
         $granted_arg = $request_model->granted;
         $rejected_arg = $request_model->rejected;
 
         if ($granted_arg == 0 && $rejected_arg == 0)
-            return $this->ValidatePending();
+            return $this->validatePending();
 
         if ($granted_arg == 1 && $rejected_arg == 0)
-            return $this->ValidateGranted();
+            return $this->validateGranted();
 
         if ($granted_arg == 0 && $rejected_arg == 1)
-            return $this->ValidateDenied();
+            return $this->validateDenied();
     }
 
-    protected function ValidatePending()
+    protected function validatePending()
     {
-        $pending = $this->LoadStatusStorage();
+        $pending = $this->loadStatusStorage();
         return $pending['profile_pending'];
     }
-    protected function ValidateGranted()
+    protected function validateGranted()
     {
-        $granted = $this->LoadStatusStorage();
+        $granted = $this->loadStatusStorage();
         return $granted['profile_granted'];
     }
-    protected function ValidateDenied()
+    protected function validateDenied()
     {
-        $denied = $this->LoadStatusStorage();
+        $denied = $this->loadStatusStorage();
         return $denied['profile_denied'];
     }
 }

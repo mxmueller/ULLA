@@ -18,10 +18,9 @@ class CreatePeriodsTable extends Migration
             $table->bigInteger('start_tstmp');
             $table->bigInteger('end_tstmp');
             $table->boolean('half_day')->nullable();
+            $table->double('sum');
             $table->timestamps();
-
             $table->foreign('id')->references('id')->on('requests');
-
         });
     }
 

@@ -54,9 +54,10 @@ class RequestFromSubmit extends Controller
             }
 
             $periodModel = new PeriodModel;
-            $periodModel->start_tstmp = intval($request->_start_tstmp);
-            $periodModel->end_tstmp = intval($request->_end_tstmp);
-            $periodModel->half_day = $request->_half_day;
+            $periodModel->start_tstmp = intval($request->start_tstmp);
+            $periodModel->end_tstmp = intval($request->end_tstmp);
+            $periodModel->half_day = $request->half_day;
+            $periodModel->sum = $request->sum;
             $requestModel->period()->save($periodModel);
 
             $humanResourceModel = new HumanResourceModel;
@@ -70,7 +71,7 @@ class RequestFromSubmit extends Controller
             $humanResourceEntry->executive()->associate($executive)->save();
             $humanResourceEntry->creator()->associate($creator)->save();
 
-            $stand_in_user_collection = $request->_stand_in_collection[0];
+            $stand_in_user_collection = $request->stand_in_collection[0];
             foreach ($stand_in_user_collection as $stand_in) {
                 $standInModel = new UserStandInModel;
                 $standInModel->request_stand_in_id = $requestModel->id;

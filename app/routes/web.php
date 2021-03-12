@@ -49,6 +49,6 @@ Route::get('/request/overview', [App\Http\Controllers\Request\RequestOverview::c
 Route::get('/request/success', function () {
     return view('request.success');
 });
-Route::get('/request/{id}/detail', [App\Http\Controllers\Request\RequestDetail::class, 'index']);
+Route::get('/request/{id}/detail', [App\Http\Controllers\Request\RequestDetail::class, 'index'])->name('/request/{id}/detail');
 
 Auth::routes();

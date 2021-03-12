@@ -18,6 +18,7 @@ $(function() {
             let $start_tstmp = null;
             let $end_tstmp = null;
             let $request_comment = null;
+            let $sum = null;
 
             $("." + $add_on_identifier).each(function($key, $value) {
                 let $timestamp = $($value)
@@ -64,10 +65,12 @@ $(function() {
                 $half_day = 1;
                 $start_tstmp = $tstmp;
                 $end_tstmp = $tstmp;
+                $sum = $("#sum-half").val();
             } else {
                 $half_day = 0;
                 $start_tstmp = $range.getStartDate()._i;
                 $end_tstmp = $range.getEndDate()._i;
+                $sum = $("#sum").val();
             }
 
             if (!$("#request_comment").val()) {
@@ -85,16 +88,19 @@ $(function() {
                     executive_id: $("#executive").val()
                 },
                 {
-                    _stand_in_collection: $stand_in_collection
+                    stand_in_collection: $stand_in_collection
                 },
                 {
-                    _half_day: $half_day
+                    half_day: $half_day
                 },
                 {
-                    _start_tstmp: $start_tstmp
+                    start_tstmp: $start_tstmp
                 },
                 {
-                    _end_tstmp: $end_tstmp
+                    sum : $sum
+                },
+                {
+                    end_tstmp: $end_tstmp
                 },
                 {
                     request_comment: $request_comment
