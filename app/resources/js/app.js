@@ -13,6 +13,7 @@ require('./bootstrap');
 require('../scripts/request/request-stand-in');
 require('../scripts/request/request-checkbox-toggel');
 require('../scripts/request/request-form');
+require('../scripts/request/request-search');
 require('../scripts/datepicker/datepicker-lightpick');
 
 window.Vue = require('vue');
