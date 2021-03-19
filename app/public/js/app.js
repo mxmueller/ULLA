@@ -73201,11 +73201,24 @@ $(function () {
 $(function () {
   var $regularSearchSubmitBtn = $("#request-search");
   $regularSearchSubmitBtn.on("click", function () {
-    var $orderSelection = $('#order').find(":selected").val();
-    var $quantumSelection = $("#quantum").find(":selected").val();
-    var $employeesSelection = $("#employees").find(":selected").val();
-    window.location.replace("/request/summary/segmented?order=" + $orderSelection + "&employee=" + $employeesSelection + "&quantum=" + $quantumSelection);
+    var $order = $('#order').find(":selected").val();
+    var $quantum = $("#quantum").find(":selected").val();
+    var $employees = $("#employees").find(":selected").val();
+    var $status = $("#status").find(":selected").val();
+    var $sq = ascii_to_hexa($order + ':' + $quantum + ':' + $employees + ':' + $status);
+    window.location.replace("/request/segmented/" + $sq);
   });
+
+  function ascii_to_hexa(str) {
+    var arr1 = [];
+
+    for (var n = 0, l = str.length; n < l; n++) {
+      var hex = Number(str.charCodeAt(n)).toString(16);
+      arr1.push(hex);
+    }
+
+    return arr1.join('');
+  }
 });
 
 /***/ }),

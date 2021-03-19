@@ -65,8 +65,12 @@ class RequestDetail extends Controller
             $this->responseError = true;
             return false;
         }
-        // check if user owns request
-        if ($this->permissionConfirmation($id) == false && $this->executiveInRequest($id) == false) {
+        // check if user is allowed to see request
+        if (
+            $this->permissionConfirmation($id) == false &&
+            $this->executiveInRequest($id) == false &&
+            $this->accountingInUser() == false
+        ) {
             $this->responseMessage = $this->errorPermissionResponse;
             $this->responseError = true;
             return false;
@@ -92,6 +96,13 @@ class RequestDetail extends Controller
         $assignedExecutive = RequestModel::find($id)->human_resource->executive;
 
         if ($assignedExecutive == Auth::user()->id)
+            return true;
+        return false;
+    }
+
+    public function accountingInUser()
+    {
+        if (Auth::user()->roles->toArray()[0]['name'] == 'accounting')
             return true;
         return false;
     }

@@ -47,6 +47,7 @@ Route::get('/request/overview', [App\Http\Controllers\Request\RequestOverview::c
 Route::get('/request/{id}/detail', [App\Http\Controllers\Request\RequestDetail::class, 'index'])->name('/request/{id}/detail');
 Route::get('/request/{id}/decision', [App\Http\Controllers\Request\RequestDecision::class, 'index'])->name('/request/{id}/decision');
 Route::get('/request/assigned', [App\Http\Controllers\Request\RequestAssigned::class, 'index'])->name('/request/assigned');
+Route::get('/request/segmented/{sq}', [App\Http\Controllers\Request\RequestSummary::class, 'segmented']);
 Route::get('/request/success', function () {
     return view('request.success');
 });
