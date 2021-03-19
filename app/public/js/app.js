@@ -72855,6 +72855,8 @@ __webpack_require__(/*! ../scripts/request/request-checkbox-toggel */ "./resourc
 
 __webpack_require__(/*! ../scripts/request/request-form */ "./resources/scripts/request/request-form.js");
 
+__webpack_require__(/*! ../scripts/request/request-search */ "./resources/scripts/request/request-search.js");
+
 __webpack_require__(/*! ../scripts/datepicker/datepicker-lightpick */ "./resources/scripts/datepicker/datepicker-lightpick.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -73185,6 +73187,25 @@ $(function () {
       });
     });
   }
+});
+
+/***/ }),
+
+/***/ "./resources/scripts/request/request-search.js":
+/*!*****************************************************!*\
+  !*** ./resources/scripts/request/request-search.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  var $regularSearchSubmitBtn = $("#request-search");
+  $regularSearchSubmitBtn.on("click", function () {
+    var $orderSelection = $('#order').find(":selected").val();
+    var $quantumSelection = $("#quantum").find(":selected").val();
+    var $employeesSelection = $("#employees").find(":selected").val();
+    window.location.replace("/request/summary/segmented?order=" + $orderSelection + "&employee=" + $employeesSelection + "&quantum=" + $quantumSelection);
+  });
 });
 
 /***/ }),

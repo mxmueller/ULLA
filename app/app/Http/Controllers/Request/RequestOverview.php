@@ -27,15 +27,14 @@ class RequestOverview extends Controller
 
     public function index()
     {
-        $requestOverviewArray = $this->buildRequestOverviewArray();
+        $requestOverviewArray = $this->buildOverviewRequest();
         return view('request.overview', compact('requestOverviewArray'));
     }
 
-    private function buildRequestOverviewArray()
+    private function buildOverviewRequest()
     {
         $overviewRequest = collect();
         $this->essentialArguments();
-
 
         foreach ($this->hmr as $hmrEntry) {
             if ($hmrEntry->creator == $this->userId) {

@@ -42,7 +42,22 @@ class RequestDetail extends Controller
         return view('request.detail', compact('details'));
     }
 
-    protected function doorman($id)
+    public function descision($id)
+    {
+        $this->responseMessage = '';
+        $this->responseCollection = collect();
+        $this->responseError = false;
+
+        // validates existence and permission
+        $this->doorman($id);
+
+        // main 
+        $this->buildDetailRequest($id);
+
+        return $this->responseCollection;
+    }
+
+    public function doorman($id)
     {
         // check if request exist
         if ($this->existenceConfirmation($id) == false) {
@@ -51,28 +66,37 @@ class RequestDetail extends Controller
             return false;
         }
         // check if user owns request
-        if ($this->permissionConfirmation($id) == false) {
+        if ($this->permissionConfirmation($id) == false && $this->executiveInRequest($id) == false) {
             $this->responseMessage = $this->errorPermissionResponse;
             $this->responseError = true;
             return false;
         }
     }
 
-    private function existenceConfirmation($id)
+    public function existenceConfirmation($id)
     {
         if (RequestModel::find($id) != null)
             return true;
         return false;
     }
 
-    private function permissionConfirmation($id)
+    public function permissionConfirmation($id)
     {
         if (RequestModel::find($id)->human_resource->creator == Auth::user()->id)
             return true;
         return false;
     }
 
-    private function buildDetailRequest($id)
+    public function executiveInRequest($id)
+    {
+        $assignedExecutive = RequestModel::find($id)->human_resource->executive;
+
+        if ($assignedExecutive == Auth::user()->id)
+            return true;
+        return false;
+    }
+
+    public function buildDetailRequest($id)
     {
         // get query
         $this->detailQuery($id);
@@ -121,13 +145,13 @@ class RequestDetail extends Controller
         return $this->responseCollection->toArray();
     }
 
-    protected function detailQuery($id)
+    public function detailQuery($id)
     {
         $this->request = RequestModel::find($id);
         // ...
     }
 
-    private function requestComment($request)
+    public function requestComment($request)
     {
         if ($request->request_comment != null) {
             $comment = collect(
@@ -141,7 +165,7 @@ class RequestDetail extends Controller
         return $comment->toArray();
     }
 
-    private function rejectedComment($request)
+    public function rejectedComment($request)
     {
         if ($request->rejected_comment != null) {
             $comment = collect(
@@ -155,7 +179,7 @@ class RequestDetail extends Controller
         return $comment->toArray();
     }
 
-    private function grantedComment($request)
+    public function grantedComment($request)
     {
         if ($request->granted_comment != null) {
             $comment = collect(
@@ -169,7 +193,7 @@ class RequestDetail extends Controller
         return $comment->toArray();
     }
 
-    private function standInConstructor($request)
+    public function standInConstructor($request)
     {
         $this->standInUserCollection = collect();
         $this->standInUserDatabaseCollection = UserStandInModel::where('request_stand_in_id', $request->id)->get();
@@ -190,7 +214,7 @@ class RequestDetail extends Controller
         return $this->standInUserCollection->toArray();
     }
 
-    private function resolveUsersFullName($userId)
+    public function resolveUsersFullName($userId)
     {
         return UserModel::find($userId)->name;
     }

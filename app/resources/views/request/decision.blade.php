@@ -12,15 +12,35 @@
         @else
         <div class="w-100 mt-5">
 
+            <form id="executive-decision-form" method="post" action="{{ url('request_decision_submit') }}">@csrf</form>
+
+            <input form="executive-decision-form" type="hidden" name="id" value={{$detail['request']['id']}}></input>
+
             <div class="jumbotron rounded-0">
                 <h2 class="display-4">Antrag
                     <span class="badge rounded-pill bg-secondary text-white">#{{$detail['request']['id']}}</span>
                 </h2>
+                <p class="lead">Auswahl treffen ob der unten aufgeführte Antrag genehmigt oder abgelehnt werden soll.</p>
                 <hr class="my-4">
-                <p>Status:</p>
-                <p class="lead">
-                    {{$detail['status']['message']}} &nbsp &nbsp {!! $detail['status']['svg'] !!}
-                </p>
+
+                <p>Auswählen:</p>
+                <!-- checkbox -->
+                <div class="form-check form-check-inline">
+                    <input form="executive-decision-form" class="form-check-input" type="radio" name="radio" id="granted_radio" value="granted">
+                    <label class="font-weight-bold form-check-label text-success" for="granted_radio">Genehmigen</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input form="executive-decision-form" class="form-check-input" type="radio" name="radio" id="rejectedRadio" value="rejected">
+                    <label class="font-weight-bold form-check-label text-danger" for="rejectedRadio">Ablehnen</label>
+                </div>
+                <br>
+                <!-- Textfield -->
+                <label class="mt-3" for="decisionComment">Kommentar: (Optional)</label>
+                <textarea form="executive-decision-form" name="comment" maxlength="250" class="rounded-0 form-control" id="decsisionComment" rows="4"></textarea>
+                <small class="form-text text-muted">Maximal 250 Zeichen</small>
+
+                <br>
+                <button form="executive-decision-form" type="submit" class="btn btn-outline-secondary">Bestätigen</button>
             </div>
 
         </div>
