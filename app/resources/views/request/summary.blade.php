@@ -6,7 +6,7 @@
         <div class="w-100 mt-5">
             <div class="jumbotron rounded-0">
                 <h3 class="display-4">Alle Anträge:</h2>
-                    <p>Ausgabe aller bestätigten Anträge aller Mitarbeiter.</p>
+                    <p>Ausgabe aller segmentierter Anträge.</p>
                     <hr class="my-4">
                     <p>Segmentierung:</p>
                     <form>

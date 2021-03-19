@@ -114,8 +114,10 @@ $(function() {
                 data: $backend_from_request,
                 type: "POST",
                 url: "/request_submit_form_data"
-            }).done(function($data) {
+            }).done(function($requestId) {
                 window.location.href = "/request/success";
+
+                // to be  counting
             });
         });
     }

@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\Request;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+use Illuminate\Http\Request;
+use App\Models\User as UserModel;
+use App\Mail\Request\CreationMail;
 
+use Monolog\Handler\StreamHandler;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Models\Period as PeriodModel;
 use App\Models\Comment as CommentModel;
 use App\Models\Request as RequestModel;
 use App\Models\Request_type as RequestTypeModel;
-use App\Models\Period as PeriodModel;
-use App\Models\User as UserModel;
 use App\Models\User_stand_in as UserStandInModel;
 use App\Models\Human_resource as HumanResourceModel;
 
@@ -72,6 +74,7 @@ class RequestFromSubmit extends Controller
             $humanResourceEntry->creator()->associate($creator)->save();
 
             $stand_in_user_collection = $request->stand_in_collection[0];
+
             foreach ($stand_in_user_collection as $stand_in) {
                 $standInModel = new UserStandInModel;
                 $standInModel->request_stand_in_id = $requestModel->id;
@@ -79,6 +82,8 @@ class RequestFromSubmit extends Controller
                 $standInModel->over_handing_tstmp = $stand_in['timestamp'];
                 $standInModel->save();
             }
+
+            echo $requestModel->id;
         }
 
         if ($request->request_comment === 'false') {
