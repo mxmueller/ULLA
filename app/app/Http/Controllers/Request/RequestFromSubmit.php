@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Request;
 use Monolog\Logger;
 use Illuminate\Http\Request;
 use App\Models\User as UserModel;
-use App\Mail\Request\CreationMail;
+use App\Mail\Request\CreationMailCreator;
 
 use Monolog\Handler\StreamHandler;
 use App\Http\Controllers\Controller;
@@ -84,6 +84,8 @@ class RequestFromSubmit extends Controller
             }
 
             echo $requestModel->id;
+            
+            Mail::to($creator->email)->send(new CreationMailCreator($creator->name, $requestModel->id));            
         }
 
         if ($request->request_comment === 'false') {

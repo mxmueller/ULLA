@@ -11,14 +11,18 @@ class CreationMailCreator extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $recipient;
+    public $requestId;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name, $requestId)
     {
-        //
+        $this->recipient = $name;
+        $this->requestId = $requestId;
     }
 
     /**
@@ -28,6 +32,7 @@ class CreationMailCreator extends Mailable
      */
     public function build()
     {
-        return $this->view('request.mails.creation');
+        return $this->subject("Bald geht's in Urlaub!")
+        ->view('request.mails.creator.creation');
     }
 }
