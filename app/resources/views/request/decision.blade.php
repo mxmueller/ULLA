@@ -40,7 +40,7 @@
                 <small class="form-text text-muted">Maximal 250 Zeichen</small>
 
                 <br>
-                <button form="executive-decision-form" type="submit" class="btn btn-outline-secondary">Bestätigen</button>
+                <button id="decisionSubmit" form="executive-decision-form" type="submit" class="btn btn-outline-secondary">Bestätigen</button>
             </div>
 
         </div>

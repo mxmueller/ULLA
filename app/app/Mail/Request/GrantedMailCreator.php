@@ -7,13 +7,14 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CreationMailExecutive extends Mailable
+class GrantedMailCreator extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $executive;
+    public $ics;
     public $creator;
     public $requestId;
+    public $google;
     public $link;
 
     /**
@@ -21,12 +22,13 @@ class CreationMailExecutive extends Mailable
      *
      * @return void
      */
-    public function __construct($creator, $executive, $requestId)
+    public function __construct($creator, $ics, $google, $requestId)
     {
+        $this->ics = $ics;
+        $this->google = $google;
         $this->creator = $creator;
-        $this->executive = $executive;
         $this->requestId = $requestId;
-        $this->link = 'http://127.0.0.1:8000/request/' . $requestId . '/decision';
+        $this->link = 'http://127.0.0.1:8000/request/' . $requestId . '/detail';
     }
 
     /**
@@ -36,7 +38,7 @@ class CreationMailExecutive extends Mailable
      */
     public function build()
     {
-        return $this->subject("Ein neuer Antrag wurde Ihnen zugewiesen🚦")
-        ->markdown('request.mails.executive.info');
+        return $this->subject("Antrag Freigegeben! ✔️")
+        ->markdown('request.mails.creator.granted');
     }
 }

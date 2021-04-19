@@ -11,7 +11,10 @@ $(function() {
             }
         });
 
-        $form_submit_btn.on("click", function() {
+        $form_submit_btn.on("click", function() {    
+        $form_submit_btn.attr("disabled", true)
+        $form_submit_btn.fadeOut();
+
             let $stand_in_collection = [];
             let $stand_in = [];
             let $half_day = null;

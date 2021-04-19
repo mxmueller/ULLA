@@ -13,6 +13,7 @@ class CreationMailCreator extends Mailable
 
     public $recipient;
     public $requestId;
+    public $detailLink;
 
     /**
      * Create a new message instance.
@@ -23,6 +24,7 @@ class CreationMailCreator extends Mailable
     {
         $this->recipient = $name;
         $this->requestId = $requestId;
+        $this->detailLink = 'http://127.0.0.1:8000/request/' . $requestId . '/detail';
     }
 
     /**
@@ -32,7 +34,7 @@ class CreationMailCreator extends Mailable
      */
     public function build()
     {
-        return $this->subject("Bald geht's in Urlaub!")
-        ->view('request.mails.creator.creation');
+        return $this->subject("Bald geht's in Urlaub! 🏝")
+        ->markdown('request.mails.creator.creation');
     }
 }

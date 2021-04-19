@@ -13,7 +13,7 @@
         </div>
 
 
-        <div class="custom-border-default w-100 mt-3">
+        <div class="custom-border-default w-100 mt-3 mb-5">
             <table class="table table-hover mb-0">
                 <thead class="border-top-0" style="
                     border-top: hidden !important;

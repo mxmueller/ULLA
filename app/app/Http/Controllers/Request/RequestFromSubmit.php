@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Request;
 use Monolog\Logger;
 use Illuminate\Http\Request;
 use App\Models\User as UserModel;
+
 use App\Mail\Request\CreationMailCreator;
+use App\Mail\Request\CreationMailExecutive;
 
 use Monolog\Handler\StreamHandler;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+
 use App\Models\Period as PeriodModel;
 use App\Models\Comment as CommentModel;
 use App\Models\Request as RequestModel;
@@ -85,7 +88,11 @@ class RequestFromSubmit extends Controller
 
             echo $requestModel->id;
             
+            // Success Mail Creator
             Mail::to($creator->email)->send(new CreationMailCreator($creator->name, $requestModel->id));            
+        
+            // Success Mail Executive
+            Mail::to($executive->email)->send(new CreationMailExecutive($creator->name, $executive->name, $requestModel->id));            
         }
 
         if ($request->request_comment === 'false') {

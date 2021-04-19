@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div id="pending" class="custom-border-default w-100 mt-3">
+        <div id="pending" class="custom-border-default w-100 mt-3 mb-5">
 
             <div class="row">
                 <div class="col">
