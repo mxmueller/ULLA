@@ -72857,6 +72857,8 @@ __webpack_require__(/*! ../scripts/request/request-form */ "./resources/scripts/
 
 __webpack_require__(/*! ../scripts/request/request-search */ "./resources/scripts/request/request-search.js");
 
+__webpack_require__(/*! ../scripts/request/request-decision */ "./resources/scripts/request/request-decision.js");
+
 __webpack_require__(/*! ../scripts/datepicker/datepicker-lightpick */ "./resources/scripts/datepicker/datepicker-lightpick.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -73094,6 +73096,24 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/scripts/request/request-decision.js":
+/*!*******************************************************!*\
+  !*** ./resources/scripts/request/request-decision.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  if ($('#executive-decision-form')) {
+    $("#executive-decision-form").submit(function (event) {
+      $('#decisionSubmit').attr('disabled', 'disabled');
+      $('#decisionSubmit').fadeOut();
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/scripts/request/request-form.js":
 /*!***************************************************!*\
   !*** ./resources/scripts/request/request-form.js ***!
@@ -73113,6 +73133,8 @@ $(function () {
       }
     });
     $form_submit_btn.on("click", function () {
+      $form_submit_btn.attr("disabled", true);
+      $form_submit_btn.fadeOut();
       var $stand_in_collection = [];
       var $stand_in = [];
       var $half_day = null;
@@ -73182,8 +73204,8 @@ $(function () {
         data: $backend_from_request,
         type: "POST",
         url: "/request_submit_form_data"
-      }).done(function ($data) {
-        window.location.href = "/request/success";
+      }).done(function ($requestId) {
+        window.location.href = "/request/success"; // to be  counting
       });
     });
   }
