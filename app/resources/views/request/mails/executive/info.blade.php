@@ -1,10 +1,10 @@
 @component('mail::message')
 # Hallo, {{$executive}}!
 
-Ihnen wurde ein neuer Antrag zugewiesen!.
+Ihnen wurde ein neuer Antrag zugewiesen!
 
 @component('mail::table')
-| Antragsteller:in  | Id             |
+| Antragsteller:in  | Id:             |
 | :---------------- | :------------- |
 | {{$creator}}      | #{{$requestId}} |
 @endcomponent
