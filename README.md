@@ -57,6 +57,7 @@ php artisan db:seed --class=ullaDefaultRequestTypeSeeder
 Mail Setup:
 ```
 php artisan vendor:publish --tag=laravel-mail
+composer require spatie/calendar-links
 ```
 
 <br>
