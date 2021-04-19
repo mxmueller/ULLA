@@ -54,6 +54,11 @@ php artisan db:seed --class=ullaDefaultAdminSeed
 php artisan db:seed --class=ullaDefaultRequestTypeSeeder
 ```
 
+Mail Setup:
+```
+php artisan vendor:publish --tag=laravel-mail
+```
+
 <br>
 Now we created all 4 setup roles and the default Admin User! <br>
 Default Admin credentials:<br>
