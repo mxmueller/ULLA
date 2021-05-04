@@ -24,16 +24,16 @@ class CreateRequestsTable extends Migration
         $table->timestamps();
 
         $table->foreign('request_type_id')->references('id')->on('request_types')
-        ->onDelete('cascade');
+            ->onDelete('cascade');
 
         $table->foreign('request_comment_id')->references('id')->on('comments')
             ->onDelete('cascade');
 
         $table->foreign('granted_comment_id')->references('id')->on('comments')
-        ->onDelete('cascade');
+            ->onDelete('cascade');
 
         $table->foreign('rejected_comment_id')->references('id')->on('comments')
-        ->onDelete('cascade');
+            ->onDelete('cascade');
         });
     }
 

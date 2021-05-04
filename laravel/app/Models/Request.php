@@ -9,18 +9,10 @@ class Request extends Model
 {
     use HasFactory;
 
-    // --------------------------------------------------------------------
-    // ANCHOR Usage find request->comment
-    // Usage: Request::find(x)->request_type
-
     public function request_type()
     {
         return $this->belongsTo(Request_type::class, 'request_type_id', 'id');
     }
-
-    // --------------------------------------------------------------------
-    // ANCHOR Usage find request->comment
-    // Usage: Request::find(x)->comment_x
 
     public function request_comment()
     {
@@ -37,18 +29,10 @@ class Request extends Model
         return $this->belongsTo(Comment::class, 'rejected_comment_id', 'id');
     }
 
-    // --------------------------------------------------------------------
-    // ANCHOR Usage find request->period
-    // Usage: Request::find(x)->period
-
     public function period()
     {
         return $this->hasOne(Period::class, 'id', 'id');
     }
-
-    // ----------------------------------------------------------------
-    // ANCHOR Usage find request->human_resource
-    // Usage: Request::find(x)->human_resource
 
     public function human_resource()
     {
