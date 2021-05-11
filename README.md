@@ -104,8 +104,8 @@ composer require spatie/calendar-links
 
 <br>
 
-Wichtig!
-Beim dem Initialen aufbau muss app/json Ordber nach app/storage/app kopiert werden
+__Wichtig!
+Beim dem Initialen aufbau muss app/json Ordber nach app/storage/app kopiert werden__
 
 <br>
 <br>
