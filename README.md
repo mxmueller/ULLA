@@ -85,9 +85,14 @@ php artisan db:seed --class=ullaDefaultRequestTypeSeeder
 <br>
 
 Der Admin Seed erstellt den Initialen Admin User. <br>
-Default Admin credentials:<br>
-Email: admin@admin.com <br>
-Password: password <br>
+Default Admin Zugangsdaten:
+
+<br>
+
+| E-Mail         | Passwort      | 
+| ---------------|:-------------:| 
+| admin@admin.com| password      |
+
 Nach der einrichtung sollte der User gelöscht werden.
 
 <br>
