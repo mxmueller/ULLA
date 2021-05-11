@@ -1,4 +1,4 @@
-<img  width="80" src="https://github.com/mxmueller/ULLA/laravel/app/public/brand/logo_round_black.png">
+<img  width="80" src="https://github.com/mxmueller/ULLA/blob/main/laravel/public/brand/logo_small.png">
 Urlaubsverwaltungs- &amp; Antragsstellungsapplikation (kurz. ULLA)
 
 
