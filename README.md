@@ -32,11 +32,12 @@ Beispiel vhost Konfiguration (falls nötig):
 ```
 (Verzeichnisstruktur nur Beispielhaft).
 
-
 <br>
+
 Composer installieren:
 Composer kümmert sich darum, diese ganzen Abhängigkeiten aufzulösen und alle benötigten Bibliotheken automatisch in der richtigen Version in unser Projekt herunterzuladen.
 Sollte composer bereits installiert sein kann dieser Schritt übersprungen werden.
+
 ```
 composer install
 ```
@@ -44,6 +45,8 @@ composer install
 <br>
 Laratrust installieren:
 Laratrust ist ein Laravel (>=5.2)-Paket, mit dem sehr einfach alles, was mit Autorisierung (Rollen und Berechtigungen) zu tun hat, innerhalb einer Laravel Anwendung hangehabt werden kann.
+
+
 ```
 composer require santigarcor/laratrust
 php artisan vendor:publish --tag="laratrust"
@@ -53,12 +56,17 @@ php artisan migrate
 ```
 
 <br>
+
 Laravel UI installieren:
+
 ```
 composer require laravel/ui
 ```
+
 <br>
+
 Frontend aktualisieren:
+
 ```
 npm install
 npm run dev
@@ -67,27 +75,34 @@ npm run dev
 <br>
 
 Seeds:
+
 ```
 php artisan db:seed --class=ullaDefaultRoleSeeder
 php artisan db:seed --class=ullaDefaultAdminSeed
 php artisan db:seed --class=ullaDefaultRequestTypeSeeder
 ```
+
 <br>
+
 Der Admin Seed erstellt den Initialen Admin User. <br>
 Default Admin credentials:<br>
 Email: admin@admin.com <br>
 Password: password <br>
 Nach der einrichtung sollte der User gelöscht werden.
+
 <br>
 
 Mail Setup:
+
 ```
 php artisan vendor:publish --tag=laravel-mail
 composer require spatie/calendar-links
 ```
 
 <br>
+
 Wichtig!
 Beim dem Initialen aufbau muss app/json Ordber nach app/storage/app kopiert werden
+
 <br>
 <br>
