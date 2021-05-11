@@ -1,9 +1,10 @@
 <img  width="140" src="https://github.com/mxmueller/ULLA/blob/main/laravel/public/brand/logo_round_black.png">
 Urlaubsverwaltungs- &amp; Antragsstellungsapplikation (kurz. ULLA)
 
+ <br>
 
 - [Setup](#Setup)
-
+- [Funktion](#Funktion)
 
 
 # Setup
@@ -36,7 +37,7 @@ Beispiel vhost Konfiguration (falls nötig):
 
 Composer installieren:
 Composer kümmert sich darum, diese ganzen Abhängigkeiten aufzulösen und alle benötigten Bibliotheken automatisch in der richtigen Version in unser Projekt herunterzuladen.
-Sollte composer bereits installiert sein kann dieser Schritt übersprungen werden.
+Sollte Composer bereits installiert sein kann dieser Schritt übersprungen werden.
 
 ```
 composer install
@@ -44,7 +45,7 @@ composer install
 
 <br>
 Laratrust installieren:
-Laratrust ist ein Laravel (>=5.2)-Paket, mit dem sehr einfach alles, was mit Autorisierung (Rollen und Berechtigungen) zu tun hat, innerhalb einer Laravel Anwendung hangehabt werden kann.
+Laratrust ist ein Laravel (>=5.2)-Paket, mit dem sehr einfach alles, was mit Autorisierung (Rollen und Berechtigungen) zu tun hat, innerhalb einer Laravel Anwendung hangehabt werden kann. Elementar für die Applikation.
 
 
 ```
@@ -105,7 +106,11 @@ composer require spatie/calendar-links
 <br>
 
 __Wichtig!
-Beim dem Initialen aufbau muss app/json Ordber nach app/storage/app kopiert werden__
+Beim dem Initialen Aufbau muss app/json Ordber nach app/storage/app kopiert werden__
 
 <br>
 <br>
+
+# Funktion
+
+...
