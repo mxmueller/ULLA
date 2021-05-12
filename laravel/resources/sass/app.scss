@@ -159,3 +159,8 @@ background: -webkit-linear-gradient(90deg, hsla(259, 84%, 78%, 1) 0%, hsla(206, 
 .login-spanner {
     height:100vh;
 }
+
+.field-error {
+  border: 1px solid #9a123f !important; 
+    background-color: #e2c3cd38 !important;
+}

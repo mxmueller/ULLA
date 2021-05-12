@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+<div class="modal" id="loading" tabindex="-1" role="dialog" style="
+background: #00000026;
+">
+    <div class="modal-dialog shadow border-0 mt-5" role="document">
+        <div class="modal-content border-0">
+            <div class="modal-header border-0">
+                <h5 class="modal-title border-0">Verabeitung läuft...</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -22,35 +34,42 @@
                         </div>
 
                         <div class="form-check w-25 mt-4">
-                            <input type="checkbox" id="toggle-date" class="rounded-0 form-check-input" id="exampleCheck1">
+                            <input type="checkbox" id="toggle-date" class="rounded-0 form-check-input"
+                                id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Halber Tag</label>
                         </div>
 
                         <div class="form-group w-25 mt-2" id="day-input">
                             <label for="request_comment">Datum festlegen: (Tag wählen)</label>
-                            <input id="half-day" readonly="readonly" class="rounded-0 date-range-picker form-control bg-white" name="daterange" type="text">
+                            <input id="half-day" readonly="readonly"
+                                class="rounded-0 date-range-picker form-control bg-white" name="daterange" type="text">
                         </div>
 
                         <div class="form-group w-25 mt-2" id="range-input">
                             <label for="request_comment">Datum festlegen: (Zeitraum wählen)</label>
-                            <input id="range" readonly="readonly" class="rounded-0 date-range-picker form-control bg-white" name="daterange" type="text">
+                            <input id="range" readonly="readonly"
+                                class="rounded-0 date-range-picker form-control bg-white" name="daterange" type="text">
                         </div>
 
                         <div class="form-group w-25 mt-2" id="sum-input">
                             <label for="sum">Urlaubstage in Zahlen festlegen:</label>
-                            <input name="sum" class="rounded-0 date-range-picker form-control" id="sum" type="number" min=0 step="0.1">
+                            <input name="sum" class="rounded-0 date-range-picker form-control" id="sum" type="number"
+                                min=0 step="0.1" required>
                             <small class="form-text text-muted">Beispiel Montag bis Mittwoch Mittag frei: 2,5</small>
                         </div>
 
                         <div class="form-group w-25 mt-2" id="sum-half-input">
                             <label for="sum">Urlaubstage in Zahlen festlegen:</label>
-                            <input readonly value=0.5 name="sum" class="rounded-0 date-range-picker form-control" id="sum-half" type="number" min=0 step="0.1">
+                            <input readonly value=0.5 name="sum" class="rounded-0 date-range-picker form-control"
+                                id="sum-half" type="number" min=0 step="0.1">
                             <small class="form-text text-muted">Beispiel Montag bis Mittwoch Mittag frei: 2,5</small>
                         </div>
 
                         <div class="form-group w-50">
                             <label for="exampleInputEmail1">Antragsteller</label>
-                            <input id="applicant" value="{{ Auth::user()->name }}" user_id="{{ Auth::user()->id }}" class="rounded-0 form-control" type="text" placeholder="{{ Auth::user()->name }}" readonly>
+                            <input id="applicant" value="{{ Auth::user()->name }}" user_id="{{ Auth::user()->id }}"
+                                class="rounded-0 form-control" type="text" placeholder="{{ Auth::user()->name }}"
+                                readonly>
                             <small id="emailHelp" class="form-text text-muted">Kann nicht bearbeitet werden.</small>
                         </div>
 
@@ -83,7 +102,9 @@
                                         <div class="col-3">
                                             <label class="float-left">Übergabe Datum:
                                             </label>
-                                            <input id="first-stand-in" readonly="readonly" class=" rounded-0 date-range-picker form-control" name="daterange" type="text">
+                                            <input id="first-stand-in" readonly="readonly"
+                                                class=" rounded-0 date-range-picker form-control" name="daterange"
+                                                type="text">
                                         </div>
                                     </div>
 
@@ -99,14 +120,19 @@
                                         </div>
 
                                         <div class="col-3 float-left">
-                                            <input readonly="readonly" class=" rounded-0 date-range-picker form-control" name="daterange" type="text">
+                                            <input readonly="readonly" class=" rounded-0 date-range-picker form-control"
+                                                name="daterange" type="text">
                                         </div>
 
                                         <div class="col-4 float-left">
-                                            <button class="delete-add-on btn btn-outline-secondary rounded-0" type="button">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                            <button class="delete-add-on btn btn-outline-secondary rounded-0"
+                                                type="button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                                 </svg>
                                                 &nbsp; Löschen
                                             </button>
@@ -121,8 +147,10 @@
 
                                 <div class="row w-100 ml-0">
                                     <button type="button" class="rounded-0 add-stand-in btn btn-outline-secondary mt-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                                         </svg>
                                         Weitere Vertretung hinzufügen
                                     </button>
@@ -133,11 +161,13 @@
 
                         <div class="form-group mt-4">
                             <label for="request_comment">Antrags Kommentar: (Optional)</label>
-                            <textarea maxlength="250" class="rounded-0 form-control" id="request_comment" rows="4"></textarea>
+                            <textarea maxlength="250" class="rounded-0 form-control" id="request_comment"
+                                rows="4"></textarea>
                             <small class="form-text text-muted">Maximal 250 Zeichen</small>
                         </div>
 
-                        <button type="button" id="form-submit" class="btn btn-primary rounded-0">Antrag Abschicken</button>
+                        <button type="button" id="form-submit" class="btn btn-primary rounded-0">Antrag
+                            Abschicken</button>
                         <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
                     </form>
                 </div>

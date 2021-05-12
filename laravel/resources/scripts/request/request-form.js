@@ -1,19 +1,37 @@
-$(function() {
+$(function () {
+
+    let $form_validation;
+
     const $request_interface_dom = "request-interface-form";
 
     if ("#" + $request_interface_dom) {
         const $form_submit_btn = $("#form-submit");
+        const $form_dom = $('#' + $request_interface_dom).find('#backend-valdiation-request');
         const $backend_from_request = {};
-
+        const $modal = $('#loading.modal');
         $.ajaxSetup({
             headers: {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
             }
         });
 
-        $form_submit_btn.on("click", function() {    
-        $form_submit_btn.attr("disabled", true)
-        $form_submit_btn.fadeOut();
+        $form_submit_btn.on("click", function () {
+            
+            // Call Form validation!
+            // The Form validation is a JavaScript Window Function
+            // and located in scripts/request/request-form-validation.js
+            $form_validation = $formValidation($form_dom);
+
+            if (!$form_validation) {
+                return {
+                    error: true,
+                    message: 'Validation failed'
+                }
+            }
+            
+            $form_submit_btn.attr("disabled", true)
+            $form_submit_btn.fadeOut();
+            $modal.fadeIn();
 
             let $stand_in_collection = [];
             let $stand_in = [];
@@ -23,7 +41,7 @@ $(function() {
             let $request_comment = null;
             let $sum = null;
 
-            $("." + $add_on_identifier).each(function($key, $value) {
+            $("." + $add_on_identifier).each(function ($key, $value) {
                 let $timestamp = $($value)
                     .find("input")
                     .val();
@@ -42,7 +60,7 @@ $(function() {
                 });
             });
 
-            $("div.first-stand-in").each(function($key, $value) {
+            $("div.first-stand-in").each(function ($key, $value) {
                 let $timestamp = $($value)
                     .find("input")
                     .val();
@@ -83,35 +101,38 @@ $(function() {
             }
 
             Object.assign(
-                $backend_from_request,
-                {
+                $backend_from_request, {
                     applicant_id: $("#applicant").attr("user_id")
-                },
-                {
+                }, {
                     executive_id: $("#executive").val()
-                },
-                {
+                }, {
                     stand_in_collection: $stand_in_collection
-                },
-                {
+                }, {
                     half_day: $half_day
-                },
-                {
+                }, {
                     start_tstmp: $start_tstmp
-                },
-                {
-                    sum : $sum
-                },
-                {
+                }, {
+                    sum: $sum
+                }, {
                     end_tstmp: $end_tstmp
-                },
-                {
+                }, {
                     request_comment: $request_comment
-                },
-                {
+                }, {
                     request_type_id: $("#type").val()
                 }
             );
+
+
+            //Aborts
+            for (var i = 0; i < $backend_from_request.stand_in_collection[0].length; i++) {
+                if (!Number.isInteger($backend_from_request.stand_in_collection[0][i].timestamp)) {
+                    window.location.href = "/404";
+                    return {
+                        error: true,
+                        message: 'Validation failed'
+                    }
+                }
+            }
 
             $.ajax({
                 data: $backend_from_request,
@@ -119,7 +140,6 @@ $(function() {
                 url: "/request_submit_form_data"
             }).done(function($requestId) {
                 window.location.href = "/request/success";
-
                 // to be  counting
             });
         });

@@ -31,15 +31,16 @@ class RequestController extends Controller
 
     private function StandIn()
     {
+        // if you comment Line 39 & 44 back in you can assign requests to admin users.
         $staff = User::whereRoleIs('staff')->get();
         $accounting = User::whereRoleIs('accounting')->get();
         $executives = User::whereRoleIs('executive')->get();
-        $admin = User::whereRoleIs('admin')->get();
+        // $admin = User::whereRoleIs('admin')->get();
 
         $stand_in_user_collection = new Collection;
         $stand_in_user_collection = $stand_in_user_collection->merge($accounting);
         $stand_in_user_collection = $stand_in_user_collection->merge($executives);
-        $stand_in_user_collection = $stand_in_user_collection->merge($admin);
+        // $stand_in_user_collection = $stand_in_user_collection->merge($admin);
         $stand_in_user_collection = $stand_in_user_collection->merge($staff);
 
         return $stand_in_user_collection;

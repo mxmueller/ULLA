@@ -7,7 +7,7 @@ window.Lightpick = require('lightpick/lightpick');
  */
 
 require('./bootstrap');
-
+require('jquery-validation');
 // Custom Scripts
 
 require('../scripts/request/request-stand-in');
@@ -16,6 +16,7 @@ require('../scripts/request/request-form');
 require('../scripts/request/request-search');
 require('../scripts/request/request-decision');
 require('../scripts/datepicker/datepicker-lightpick');
+require('../scripts/request/request-form-validation');
 
 window.Vue = require('vue');
 
