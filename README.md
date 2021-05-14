@@ -11,6 +11,8 @@ Urlaubsverwaltungs- &amp; Antragsstellungsapplikation (kurz. ULLA)
 # Setup
 <br>
 
+Origin: https://github.com/mxmueller/ULLA.git
+
 Zunächst muss das Repository geklont werden.
 
 Repository Origin:
