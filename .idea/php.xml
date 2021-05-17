@@ -112,6 +112,20 @@
       <path value="$PROJECT_DIR$/laravel/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/laravel/vendor/composer" />
       <path value="$PROJECT_DIR$/laravel/vendor/kkszymanowski/traitor" />
+      <path value="$PROJECT_DIR$/laravel/vendor/nunomaduro/larastan" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/laravel/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/laravel/vendor/mpociot/reflection-docblock" />
+      <path value="$PROJECT_DIR$/laravel/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/laravel/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/laravel/vendor/ovac/idoc" />
+      <path value="$PROJECT_DIR$/laravel/vendor/enlightn/enlightn" />
+      <path value="$PROJECT_DIR$/laravel/vendor/protoqol/prequel" />
+      <path value="$PROJECT_DIR$/laravel/vendor/enlightn/security-checker" />
+      <path value="$PROJECT_DIR$/laravel/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/laravel/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/laravel/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/laravel/vendor/seld/jsonlint" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">

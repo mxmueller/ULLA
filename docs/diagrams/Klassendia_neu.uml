@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>/Users/maximilianmuller/Git/ULLA/laravel/app/Http/Controllers/Request</OriginalElement>
+  <nodes>
+    <node x="421.5" y="894.75">\App\Traits\StatusValidatorTrait</node>
+    <node x="1057.9548429319373" y="562.75">\App\Traits\ResolveTimestampTrait</node>
+    <node x="724.5078534031411" y="124.0">\App\Http\Controllers\Request\RequestDecision</node>
+    <node x="724.5078534031411" y="398.87499999999994">\App\Http\Controllers\Request\RequestDetail</node>
+    <node x="421.50000000000006" y="134.82395287958116">\App\Http\Controllers\Request\RequestOverview</node>
+    <node x="421.5000000000001" y="311.91426701570674">\App\Http\Controllers\Request\RequestInterface</node>
+    <node x="421.50000000000006" y="400.0045811518323">\App\Http\Controllers\Request\RequestFromSubmit</node>
+    <node x="1057.9548429319373" y="682.0">\App\Http\Controllers\Request\RequestSummary</node>
+    <node x="724.5078534031411" y="1239.2630890052358">\Illuminate\Foundation\Auth\Access\AuthorizesRequests</node>
+    <node x="410.5" y="1248.0">\Illuminate\Routing\Controller</node>
+    <node x="223.0" y="1185.0">\App\Http\Controllers\Controller</node>
+    <node x="190.5" y="1359.5">\App\Http\Controllers\Request\RequestController</node>
+    <node x="724.5078534031411" y="1458.3972513089006">\Illuminate\Foundation\Validation\ValidatesRequests</node>
+    <node x="208.5" y="124.0">\App\Http\Controllers\Request\RequestView</node>
+    <node x="724.5078534031411" y="954.5">\App\Http\Controllers\Request\RequestAssigned</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\App\Http\Controllers\Request\RequestAssigned" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="-150.0" y="0.0" />
+      <point x="295.0" y="1060.0" />
+      <point x="15.0" y="-15.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestAssigned" target="\App\Traits\ResolveTimestampTrait" relationship="REALIZATION">
+      <point x="150.0" y="0.0" />
+      <point x="1185.4548429319373" y="1060.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestOverview" target="\App\Traits\ResolveTimestampTrait" relationship="REALIZATION">
+      <point x="101.0" y="0.0" />
+      <point x="1185.4548429319373" y="206.82395287958116" />
+      <point x="0.0" y="-27.5" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestSummary" target="\App\Traits\StatusValidatorTrait" relationship="REALIZATION">
+      <point x="-137.5" y="0.0" />
+      <point x="993.54777486911" y="820.0" />
+      <point x="993.54777486911" y="966.25" />
+      <point x="124.0" y="0.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestDetail" target="\App\Traits\StatusValidatorTrait" relationship="REALIZATION">
+      <point x="0.0" y="204.5" />
+      <point x="844.5078534031411" y="716.5" />
+      <point x="545.5" y="716.5" />
+      <point x="0.0" y="-71.5" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestView" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="71.5" y="0.0" />
+      <point x="361.5" y="151.5" />
+      <point x="361.5" y="1191.0" />
+      <point x="57.0" y="-9.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Controller" target="\Illuminate\Routing\Controller" relationship="GENERALIZATION">
+      <point x="5.0" y="15.0" />
+      <point x="285.0" y="1320.0" />
+      <point x="-129.5" y="0.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestSummary" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="-0.0" y="138.0" />
+      <point x="1195.4548429319373" y="1197.0" />
+      <point x="57.0" y="-3.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestOverview" target="\App\Traits\StatusValidatorTrait" relationship="REALIZATION">
+      <point x="0.0" y="72.0" />
+      <point x="522.5" y="966.25" />
+      <point x="-124.0" y="0.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestSummary" target="\App\Traits\ResolveTimestampTrait" relationship="REALIZATION">
+      <point x="-0.0" y="-138.0" />
+      <point x="1195.4548429319373" y="595.25" />
+      <point x="127.5" y="5.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestInterface" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="85.0" y="5.0" />
+      <point x="194.0" y="344.41426701570674" />
+      <point x="194.0" y="1205.0" />
+      <point x="-57.0" y="5.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestController" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="-5.0" y="-60.5" />
+      <point x="-5.0" y="15.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Controller" target="\Illuminate\Foundation\Auth\Access\AuthorizesRequests" relationship="REALIZATION">
+      <point x="57.0" y="3.0" />
+      <point x="922.0078534031411" y="1203.0" />
+      <point x="-0.0" y="93.5" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestFromSubmit" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="98.0" y="0.0" />
+      <point x="265.0" y="449.5045811518323" />
+      <point x="-15.0" y="-15.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestDecision" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="-170.0" y="0.0" />
+      <point x="213.0" y="240.0" />
+      <point x="213.0" y="1195.0" />
+      <point x="-57.0" y="-5.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestDecision" target="\App\Traits\ResolveTimestampTrait" relationship="REALIZATION">
+      <point x="170.0" y="0.0" />
+      <point x="1240.0" y="240.0" />
+      <point x="1240.0" y="585.25" />
+      <point x="127.5" y="-5.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestAssigned" target="\App\Traits\StatusValidatorTrait" relationship="REALIZATION">
+      <point x="0.0" y="-105.5" />
+      <point x="874.5078534031411" y="923.0" />
+      <point x="545.5" y="923.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="\App\Http\Controllers\Controller" target="\Illuminate\Foundation\Validation\ValidatesRequests" relationship="REALIZATION">
+      <point x="57.0" y="9.0" />
+      <point x="1145.25" y="1209.0" />
+      <point x="1145.25" y="1527.8972513089006" />
+      <point x="-246.5" y="9.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestOverview" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="-101.0" y="0.0" />
+      <point x="275.0" y="206.82395287958116" />
+      <point x="-5.0" y="-15.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestDetail" target="\App\Http\Controllers\Controller" relationship="GENERALIZATION">
+      <point x="-120.0" y="0.0" />
+      <point x="285.0" y="603.375" />
+      <point x="5.0" y="-15.0" />
+    </edge>
+    <edge source="\App\Http\Controllers\Request\RequestDetail" target="\App\Traits\ResolveTimestampTrait" relationship="REALIZATION">
+      <point x="120.0" y="0.0" />
+      <point x="906.25" y="603.375" />
+      <point x="906.25" y="590.25" />
+      <point x="-127.5" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Channel" zoom="0.6867415730337079" showDependencies="false" x="1092.5" y="711.1187827225131" />
+  <SelectedNodes>
+    <node>\App\Http\Controllers\Request\RequestFromSubmit</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

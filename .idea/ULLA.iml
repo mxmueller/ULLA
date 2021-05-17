@@ -118,6 +118,20 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/kkszymanowski/traitor" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/nunomaduro/larastan" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravel/telescope" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/mpociot/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/phpstan/phpstan" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/ovac/idoc" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/enlightn/enlightn" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/protoqol/prequel" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/enlightn/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/seld/phar-utils" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/seld/jsonlint" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
