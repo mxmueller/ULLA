@@ -1,0 +1,9 @@
+/var/www/clients/client1/web1/web
+:/var/www/clients/client1/web1/private
+:/var/www/clients/client1/web1/tmp
+:/var/www/weekly.atrivio.net/web
+:/srv/www/weekly.atrivio.net/web
+:/usr/share/php5:/usr/share/php
+:/tmp:/usr/share/phpmyadmin
+:/etc/phpmyadmin
+:/var/lib/phpmyadmin:/dev/random:/dev/urandom

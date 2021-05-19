@@ -1,2 +1,0 @@
-\beamer@sectionintoc {2}{Introduction}{4}{0}{1}
-\beamer@subsectionintoc {2}{1}{Overview of the Beamer Class}{4}{0}{1}
