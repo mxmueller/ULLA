@@ -141,7 +141,7 @@ class RequestDecision extends Controller
         }
 
         // Role "1" = Accounting
-        $this->accountingModel = LaratrustRoleModel::where('id','=','1')->first(); 
+        $this->accountingModel = LaratrustRoleModel::where('id','=','2')->first(); 
 
         $creatorId = $requestModel->human_resource->creator;
         $creatorModel = UserModel::find($creatorId);
