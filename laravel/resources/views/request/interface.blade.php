@@ -6,7 +6,7 @@ background: #00000026;
     <div class="modal-dialog shadow border-0 mt-5" role="document">
         <div class="modal-content border-0">
             <div class="modal-header border-0">
-                <h5 class="modal-title border-0">Verabeitung läuft...</h5>
+                <h5 class="modal-title border-0">Verarbeitung & Validierung läuft... ⏰</h5>
             </div>
         </div>
     </div>

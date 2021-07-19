@@ -6,7 +6,7 @@
         <div class="w-100 p-3">
 
             <div class="alert alert-success" role="alert">
-                Antrag erfolgreich gestellt
+                Antrag erfolgreich gestellt!
             </div>
 
         </div>
